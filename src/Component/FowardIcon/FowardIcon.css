@@ -1,0 +1,21 @@
+.fowardicon{
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    
+    
+}
+
+.fowardicon-first{
+    padding: 3px 0px;
+    border-radius: 50%;
+    background-color: #09051B;
+    padding-left: 13px;
+}
+
+
+.fowardicon-second{
+    border-radius: 50%;
+    padding: 3px 7px;
+    background-color: #09051B;
+}

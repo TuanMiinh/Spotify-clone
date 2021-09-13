@@ -1,0 +1,46 @@
+
+.playlisthome{
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+.playlist{
+    width: 280px;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    background: linear-gradient(#0d376b,#3b2e2e);
+    align-items: center;
+}
+
+.playlist img{
+    border-radius: 5px;
+    width: 77px;
+    height: 77px;
+}
+
+.playlist p{
+    margin-left: 22px;
+}
+
+.playlist>div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.playlist div div{
+    margin-right: 15px;
+    display: none;
+}
+
+.playlist:hover div>div{
+    display: inline-block;
+    
+}
+
+.playlist:hover {
+    cursor: pointer;
+    background:linear-gradient(#28233B,#302A44);
+}

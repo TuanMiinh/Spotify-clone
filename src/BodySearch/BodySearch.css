@@ -1,0 +1,32 @@
+.body-bar__first{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.body-bar__find{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    width: 350px;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 10px;
+    justify-content: space-between;
+    
+}
+
+.body-bar__find>input{
+    width: 290px;
+    height: 25px;
+    border: none;
+}
+
+.body-bar__find>input:focus{
+    outline: none;
+}
+
+.bodysearch-main{
+    padding: 0 30px;
+}

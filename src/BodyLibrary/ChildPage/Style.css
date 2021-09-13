@@ -1,0 +1,56 @@
+.body-library{
+    padding: 0 30px;
+}
+
+.body-library>div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+
+.body-library>h{
+    color: white;
+    font-size: 160%;
+    font-weight: 700;
+}
+.body-library>div h{
+    color: white;
+}
+.playlist-fouvor{
+    background: linear-gradient(#480FF4,#8C8AE5);
+    height: 247px;
+    width: 395px;
+    border-radius: 7px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+.playlist-fouvor p{
+    color: #CEC3FA;
+}
+
+.playlist-fouvor ul{
+    padding: 0;
+    margin-top: 27px;
+    
+}
+
+.playlist-fouvor li{
+    display: flex;
+    list-style: none;
+    margin-top: 5px;
+    
+    
+    
+}
+
+.playlist-fouvor li>p{
+    margin: 0;
+    margin-left: 10px;
+}
+
+.playlist-fouvor div>h{
+    font-size: 180%;
+    font-weight: 700;
+}

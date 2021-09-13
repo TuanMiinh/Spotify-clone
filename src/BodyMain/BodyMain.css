@@ -1,0 +1,21 @@
+.bodymain-top{
+    height: 320px;
+    background: linear-gradient(#1F105E,#121212);
+    color: white;
+}
+
+.bodymain-fisrtlist{
+    
+    padding: 10px 30px;
+}
+
+.bodymain-fisrtlist>h{
+    font-size: 200%;
+    font-weight: 700;
+    
+}
+
+.bodymain-body{
+    background-color: #121212;
+}
+

@@ -1,0 +1,45 @@
+
+.listfindall{
+    color: aliceblue;
+    margin-top: 25px;
+}
+
+.listfindall>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.listfindall>h{
+    font-size: 160%;
+    font-weight: 650;
+}
+
+
+.songfind{
+    height: 185px;
+    width: 185px;
+    border-radius: 10px;
+    background-color: #27856A;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.songfind:hover{
+    cursor: pointer;
+}
+
+.songfind>h{
+    font-size: 150%;
+    font-weight: 700;
+}
+
+.songfind>img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    transform: rotate(20deg);
+}

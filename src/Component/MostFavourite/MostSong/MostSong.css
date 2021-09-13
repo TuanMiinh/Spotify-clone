@@ -1,0 +1,46 @@
+.mostfavourite{
+    color: white;
+    margin-top: 20px;
+}
+
+.mostfavourite>div{
+    display: flex;
+    justify-content: space-between  ;
+}
+
+.mostfavourite>h{
+    font-size: 150%;
+    font-weight: 700;
+}
+
+
+.mostsong{
+    height: 220px;
+    width: 390px;
+    border-radius: 10px;
+    background-color: #BA5D07;
+    box-sizing: border-box;
+    padding: 25px 20px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.mostsong:hover{
+    cursor: pointer;
+}
+
+.mostsong>h{
+    font-size: 200%;
+    font-weight: 700;
+}
+
+.mostsong>img{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotate(20deg) translate(15%);
+
+}

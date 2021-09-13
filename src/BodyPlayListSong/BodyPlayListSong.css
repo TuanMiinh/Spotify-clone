@@ -1,0 +1,48 @@
+.bdplaylist-top{
+    height: 340px;
+    background: linear-gradient(#788897,#42566d);
+    box-shadow: 5px 5px 200px #54677a;
+}
+
+.bdplaylist-top__img {
+    padding: 0 30px;
+    margin: 20px 0;
+    display: flex;
+    color: white;
+}
+
+
+.bdplaylist-top__img img{
+    height: 230px;
+    width: 230px;
+    box-shadow: 2px 2px 10px;
+}
+
+.bdplaylist-top__img div{
+    margin-left: 20px;
+}
+
+.bdplaylist-top__img p{
+    margin-top: 0;
+    font-size: 70%;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.bdplaylist-top__img h{
+    font-size: 600%;
+    font-weight: 700;
+}
+
+.bdplaylist-body{
+    padding: 0 30px;
+    margin: 30px 0;
+}
+
+.bdplaylist-body__button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,57 @@
+.holdsong{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.holdsong:hover{
+    background-color: #2D2D2D;
+}
+
+.holdsong:hover .iconPlay{
+    display: inline;
+}
+
+.holdsong:hover .textIndex{
+    display: none;
+}
+
+.holdsong>div{
+    display: flex;
+    flex: 0.3;
+    width: 355px;
+    align-items: center;
+}
+
+.iconPlay{
+    display: none;
+}
+
+
+.holdsong>div>div{
+    height: 27px;
+    width: 23px;
+    margin-right: 25px;
+    margin-left: 5px;
+    
+}
+
+.holdsong>div img{
+    height: 40px;
+    width: 40px;
+    margin-right: 25px;
+}
+
+.holdsong>div>div p{
+    margin: 0;
+    margin-left: 7px;
+    
+}
+
+
+.holdsong>p{
+    flex: 0.2;
+    box-sizing: border-box;
+    
+}
