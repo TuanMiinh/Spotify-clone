@@ -33,6 +33,7 @@ code {
   color: #a7a7a7;
   padding: 8px;
   position: fixed;
+  
 }
 
 .sidebar div>div:hover{
@@ -97,7 +98,7 @@ code {
 .sidebar-bottom{
   border-top:1px solid #282828;
   overflow-y:scroll;
-  height: 350px;
+  height: 260px;
   font-size: 90%;
 }
 
@@ -111,6 +112,7 @@ code {
   border: 1px red;
   margin-left: 270px;
   background-color: #121212;
+  margin-bottom: 70px;
   
 }
 
@@ -170,6 +172,7 @@ code {
   justify-content: space-between;
   
   
+  
 }
 
 .footer-mid >div p{
@@ -187,16 +190,20 @@ code {
   align-items: center;
   color: grey;
   
+  
 }
 
 .footer-mid__button div:hover{
   color: white;
   cursor: pointer;
+  
 }
 .button-active{
   display: none;
   
 }
+
+
 
 
 

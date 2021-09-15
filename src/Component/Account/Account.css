@@ -17,11 +17,12 @@
 }
 
 .account-img{
-    margin-top: 1px;
+    margin-top: 2.5px;
+
 }
 
 .account-text{
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight: 600;
     font-size: 90%;
     margin-left: 5px;
@@ -41,7 +42,7 @@
     list-style: none;
     right: 0;
     border-radius: 5px;
-    padding: 0 5px;
+    padding: 3px 5px;
     background-color: #282828;
     display: none;
 }

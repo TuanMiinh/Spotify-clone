@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import {Link} from "react-router-dom";
 import IconText from './IconText';
 import HomeIcon from '@material-ui/icons/Home';
 import PageviewIcon from '@material-ui/icons/Pageview';
@@ -12,7 +7,6 @@ import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import  playlist from './dataPlayList';
-import { useState } from 'react';
 export default function SideBar() {
     // const [url,setUrl] = useState('/');
     // const onClick = () =>{

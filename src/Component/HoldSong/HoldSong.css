@@ -1,11 +1,16 @@
-.holdsong{
+.holdsong,.holdsong-active{
     display: flex;
     color: white;
     justify-content: space-between;
     border-radius: 5px;
+    
 }
 
-.holdsong:hover{
+.holdsong-active>div>p{
+    color: #1DB954;
+}
+
+.holdsong:hover,.holdsong-active:hover{
     background-color: #2D2D2D;
 }
 
@@ -13,23 +18,41 @@
     display: inline;
 }
 
+.holdsong-active .textIndex{
+    display: none;
+}
+
 .holdsong:hover .textIndex{
     display: none;
 }
 
-.holdsong>div{
+.holdsong>div,.holdsong-active>div{
     display: flex;
     flex: 0.3;
     width: 355px;
     align-items: center;
+    
 }
 
-.iconPlay{
+.holdsong-active .iconPlay-pause{
+    display: block;
+}
+
+.holdsong-active .iconPlay-play{
     display: none;
 }
 
 
-.holdsong>div>div{
+.iconPlay-pause{
+    display: none;
+}
+
+.holdsong .iconPlay{
+    display: none;
+}
+
+
+.holdsong>div>div,.holdsong-active>div>div{
     height: 27px;
     width: 23px;
     margin-right: 25px;
@@ -37,7 +60,7 @@
     
 }
 
-.holdsong>div img{
+.holdsong>div img,.holdsong-active>div img{
     height: 40px;
     width: 40px;
     margin-right: 25px;
@@ -50,8 +73,7 @@
 }
 
 
-.holdsong>p{
+.holdsong>p,.holdsong-active>p{
     flex: 0.2;
     box-sizing: border-box;
-    
 }

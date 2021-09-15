@@ -49,7 +49,7 @@ function App() {
                 <BodyPlaySong/>
             </Route>
 
-            <Route path='/playlist/1'>
+            <Route path='/playlist/'>
                 <BodyPlayListSong/>
             </Route>
 

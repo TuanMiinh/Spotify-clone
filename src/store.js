@@ -2,8 +2,10 @@ import { configureStore } from '@reduxjs/toolkit'
 import playListReducer from './Component/HoldSong/songSlice'
 
 
+
 const rootReducer = {
     playLists: playListReducer,
+    
     
 }
 
