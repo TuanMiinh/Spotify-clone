@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -98,7 +99,7 @@ code {
 .sidebar-bottom{
   border-top:1px solid #282828;
   overflow-y:scroll;
-  height: 260px;
+  height: 100vh;
   font-size: 90%;
 }
 
@@ -113,7 +114,7 @@ code {
   margin-left: 270px;
   background-color: #121212;
   margin-bottom: 70px;
-  
+  height: 100vh;
 }
 
 .body-bar{

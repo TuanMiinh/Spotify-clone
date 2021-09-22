@@ -1,0 +1,199 @@
+:root {
+    --color: #fff; 
+}
+
+.header {
+    height: 340px;
+    background: linear-gradient(to bottom,#535353, #2A2A2A);
+    
+}
+
+.header--info {
+    height: 280px;
+    min-width: 100vh;
+    padding: 15px 30px 0;
+    display: flex;
+}
+
+.header--img {
+    height: 14.5rem;
+    width: 14.5rem;
+    width: 14.5rem;
+    background: white;
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+.header--img img {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+}
+
+.header--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 14.5rem;
+}
+
+.header--content .signal {
+    color: var(--color);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.header--content .signal:hover {
+    cursor: default;
+}
+
+.header--content .title {
+    color: var(--color);
+    padding: 0px 0px 0.625rem 0px;
+    font-size: 96px;
+    visibility: visible;
+    width: 100%;
+    font-weight: 900;
+    letter-spacing: -.04em;
+    text-transform: none;
+}
+
+.header--content .title:hover {
+    cursor: pointer;
+}
+
+.header--content .username {
+    color: var(--color);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-transform: none;
+}
+
+.header--content .username:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* .body__playlist {
+    background-color: #121212;
+} */
+
+.body__playlist--content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 32px;
+    position: relative;
+    margin: 0;
+    width: inherit;
+    height: 36px;
+    border: 0;
+    box-shadow: 0 8px 20px rgba(75, 74, 74, 0.5) inset;
+}
+
+.body__playlist--content .dot-icon{
+    color: rgb(83, 83, 83);
+    width: 2%;
+    height: 36px;
+}
+
+.react-dot-icons {
+    height: 36px;
+    width: 36px;
+}
+
+.react-dot-icons:hover {
+    color: var(--color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #313131;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(231, 231, 231, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    border: 1px solid #474747;
+    padding-left: 0;
+    margin-top: -5px;
+}
+
+.body__playlist--content .dot-icon:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: var(--color);
+}
+
+.dropdown-content li:hover {
+    background-color: #474747;
+    cursor: pointer;
+}
+
+.body__playlist--search {
+    width: 100%;
+    margin-top: 24px;
+    padding: 24px 0;
+    border-top: 1px solid rgb(83, 83, 83);
+}
+
+.body__playlist--search .playlist--title {
+    color: var(--color);
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 28px;
+    text-transform: none;
+}
+
+.body__playlist--search .playlist--search {
+    background-color: rgba(255,255,255,.1);
+    width: 364px;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.playlist--search .react-search-icons {
+    max-width: 16px;
+    margin-left: 15px;
+    margin-right: 5px;
+    color: var(--color);
+}
+
+.playlist--search .search--box{
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    outline: none;
+    color: var(--color);
+    width: inherit;
+    font-size: 18px;
+    background-color: rgba(47, 46, 46, 0.1);
+}
+
+.playlist--search .submit--box {
+    height: inherit;
+    border-radius: 0 5px 5px 0;
+    outline: none;
+    border: none;
+    background: #686b6a;
+    color: var(--color);
+    font-weight: 900;
+}
+
+.playlist--search .submit--box:hover {
+    cursor: pointer;
+    background-color: rgb(75, 75, 75);
+}

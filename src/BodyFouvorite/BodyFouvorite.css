@@ -1,0 +1,203 @@
+:root {
+    --color: #fff; 
+}
+
+.header {
+    height: 340px;
+    
+}
+
+.header-favourite-song {
+    background: linear-gradient(to bottom right,#533CA0, #291D50);
+}
+
+.header--info {
+    height: 280px;
+    min-width: 100vh;
+    padding: 15px 30px 0;
+    display: flex;
+}
+
+.header--img {
+    height: 14.5rem;
+    min-width: 14.5rem;
+    width: 14.5rem;
+    background: var(--color);
+    margin-right: 1.5rem;
+    box-shadow: 0 4px 60px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header--img img {
+    position: absolute;
+    height: inherit;
+    min-width: inherit;
+}
+
+.header--img .react-heart-icons {
+    width: 60px;
+    height: 60px;
+    color: var(--color);
+}
+
+.img__gradient {
+    background: linear-gradient(to bottom right,#3F12B8,#7B9187);
+}
+
+.header--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 14.5rem;
+}
+
+.header--content .signal {
+    color: var(--color);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.header--content .signal:hover {
+    cursor: default;
+}
+
+.header--content .title {
+    color: var(--color);
+    padding: 0px 0px 0.625rem 0px;
+    font-size: 96px;
+    visibility: visible;
+    width: 100%;
+    font-weight: 900;
+    letter-spacing: -.04em;
+    text-transform: none;
+}
+
+.header--content .title:hover {
+    cursor: pointer;
+}
+
+.header--content .username {
+    color: var(--color);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-transform: none;
+}
+
+.header--content .username:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.body__favlist {
+    background-color: #121212;
+}
+
+.body__favlist--content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 32px;
+    position: relative;
+    margin: 0;
+    width: inherit;
+    height: 70px;
+    border: 0;
+    box-shadow: 0px 76px 59px -19px #23174d inset;
+}
+
+.body__favlist--content .play-icon{
+    border-radius: 50%;
+    background-color: #1DB954;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body__favlist--content .play-icon:hover {
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+}
+
+.react-play-icons {
+    height: 50px;
+    width: 50px;
+    padding-left: 5px;
+    color: var(--color);
+}
+
+/******* Songs are liked **********/
+.sonngs {
+    padding: 0 32px;
+}
+
+.songs__title {
+    display: grid;
+    grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] 3fr [last]
+                            minmax(120px,1fr);
+    grid-gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    margin-bottom: 16px;
+    color: #b3b3b3;
+    height: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    height: 36px;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: .1em;
+    line-height: 33px;
+    text-transform: uppercase;
+    
+}
+
+/* .songs__list {
+    padding: 0 32px; 
+} */
+
+.songs__list--item {
+    color: var(--color);
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: [index] 16px [first] 6fr [var1] 4fr [var2] 3fr [last]
+                            minmax(120px,1fr);
+    padding: 0 16px;
+    height: 50px;
+    line-height: 49px;
+    font-size: 18px;
+}
+
+.songs__list--item:hover {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,.1);
+    cursor: pointer;
+}
+
+.songs__list--item:focus {
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,.3);
+}
+
+.songs__list--item .title {
+    display: flex;
+    align-items: center;
+}
+
+.songs__list--item .title img {
+    height: 40px;
+    width: 40px;
+    margin-right: 16px;
+}
+
+

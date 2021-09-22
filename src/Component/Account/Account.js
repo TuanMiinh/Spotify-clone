@@ -4,7 +4,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 export default function Account() {
     return (
-        <div className='account'>
+        <div className='account' onClick={showExpand}>
             <div className='account-img'>
                 <img src='https://vnn-imgs-f.vgcloud.vn/2020/03/23/11/trend-avatar-12.jpg'></img>
             </div>
@@ -12,7 +12,7 @@ export default function Account() {
                 <p>Tuấn Minh</p>
             </div>
             <div className='account-expand' >
-                <ExpandMoreIcon onClick={showExpand}/>
+                <ExpandMoreIcon />
                 <ul className='ulExpand'>
                     <li>Tài khoản</li>
                     <li>Hồ sơ</li>
