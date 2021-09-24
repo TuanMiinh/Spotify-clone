@@ -99,8 +99,9 @@ code {
 .sidebar-bottom{
   border-top:1px solid #282828;
   overflow-y:scroll;
-  height: 100vh;
+  /* height: 100vh; */
   font-size: 90%;
+  height: 260px;
 }
 
 .sidebar-bottom>div,.sidebar-mid>div {
@@ -113,8 +114,9 @@ code {
   border: 1px red;
   margin-left: 270px;
   background-color: #121212;
-  margin-bottom: 70px;
-  height: 100vh;
+  margin-bottom: 85px;
+  padding-bottom: 25px;
+  /* height: 100vh; */
 }
 
 .body-bar{

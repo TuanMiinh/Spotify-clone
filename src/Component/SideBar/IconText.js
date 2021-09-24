@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouteMatch } from 'react-router'
+import { useRouteMatch , useLocation} from 'react-router'
 
 
 export default function IconText({name,Icon,url}) {
@@ -16,8 +16,13 @@ export default function IconText({name,Icon,url}) {
 function Menu({name,Icon,url}){
     let match = useRouteMatch({
         path: url,
-        exact: true
+        exact: true,
+        strict:true
     })
+
+    console.log(match?match.path:'null')
+
+    
     return (
         <div className={match?'icontex-active':'icontext'}> 
             <Icon/>

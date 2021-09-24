@@ -6,8 +6,14 @@ import { IconContext } from "react-icons";
 import {BsHeart,
         BsClock} from "react-icons/bs";
 import {BiPlay} from "react-icons/bi"
+import data from '../Component/Footer/music-list2'
+import HoldSong from '../Component/HoldSong/HoldSong';
+import IconPlay from '../Component/IconPlay/IconPlay';
 
 export default function BodyFouvorite() {
+    const playListID = "7WZujZ2eNEaTLRMspOZbjA";
+
+    const listPlay = data.find(list=>list.idd===playListID)
     return (
         <div className = 'body'>
 
@@ -34,11 +40,9 @@ export default function BodyFouvorite() {
 
             <div className="body__favlist">
                 <div className="body__favlist--content ">
-                    <div className="play-icon" >
-                        <IconContext.Provider value={{ className: "react-play-icons" }}>
-                            <BiPlay />
-                        </IconContext.Provider>
-                    </div>
+                   
+                    <IconPlay playListID={playListID}/>
+                    
                 </div>
 
                 {/* Songs are liked */}
@@ -50,8 +54,15 @@ export default function BodyFouvorite() {
                         <div className="view">Views</div>
                         <div className="time"><BsClock/></div>
                     </div>
-
-                    <div className="songs__list">
+                    <div>
+                        {   
+                            listPlay.songList.map((song,i) =>{
+                                
+                                return <HoldSong song = {song} index={i+1} playListID={playListID}/>
+                            })
+                        }
+                    </div>
+                    {/* <div className="songs__list">
                         <div className="songs__list--item">
                             <div>1</div>
                             <div className="title">
@@ -106,7 +117,7 @@ export default function BodyFouvorite() {
                             <div>8796315612</div>
                             <div>3:59</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>

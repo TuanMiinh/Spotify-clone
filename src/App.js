@@ -15,6 +15,9 @@ import BodyFouvorite from './BodyFouvorite/BodyFouvorite';
 import Playlist from './BodyLibrary/ChildPage/Playlist';
 import BodyPlaySong from './BodyPlaySong/BodyPlaySong';
 import BodyPlayListSong from './BodyPlayListSong/BodyPlayListSong';
+import PodCast from './BodyLibrary/ChildPage/PodCast';
+import Author from './BodyLibrary/ChildPage/Author';
+import Album from './BodyLibrary/ChildPage/Album';
 
 function App() {
   return (
@@ -37,11 +40,23 @@ function App() {
                 <Playlist/>
             </Route>
 
+            <Route path='/collection/podcast'>
+                <PodCast/>
+            </Route>
+
+            <Route path='/collection/authors'>
+                <Author/>
+            </Route>
+
+            <Route path='/collection/album'>
+                <Album/>
+            </Route>
+
             <Route exact path='/playlist'>
                 <BodyPlayList/>
             </Route>
 
-            <Route path='/collection'>
+            <Route path='/tracks'>
                 <BodyFouvorite/>
             </Route>
 

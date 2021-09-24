@@ -5,11 +5,14 @@ import Account from '../Component/Account/Account'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import HoldSong from '../Component/HoldSong/HoldSong'
-import songs from '../Component/Footer/music-list'
+import data from '../Component/Footer/music-list2'
+import IconPlay from '../Component/IconPlay/IconPlay';
 
 export default function BodyPlaySong() {
    
-    
+    const playListID = "7WZujZ2eNEaTLRMspOZbjA";
+
+    const listPlay = data.find(list=>list.idd===playListID)
     return (
         <div className='body'>
             <div className='playsong-top'>
@@ -27,8 +30,9 @@ export default function BodyPlaySong() {
             
             <div className = 'playsong-body'>
                 <div className = 'playsong-body__button'>
-                    <PlayCircleFilledIcon style={{ color: '#1DB954',fontSize: 60 }}/>
-                    <div>
+                    
+                    <IconPlay playListID={playListID}/>
+                    <div className='playsong-body__text'>
                         <p>THEO DÕI</p>
                     </div>
                     <MoreHorizIcon style={{ color: 'white',fontSize: 30 }}/>
@@ -37,9 +41,11 @@ export default function BodyPlaySong() {
                 <div className = 'playsong-body__content'>
                     <h>Phổ biến</h>
                     <div>
-                        {
-                            songs.map((song, index) => {
-                                return <HoldSong song={song} index={index+1}/>
+                        
+                        {   
+                            listPlay.songList.map((song,i) =>{
+                                
+                                return <HoldSong song = {song} index={i+1} playListID={playListID}/>
                             })
                         }
                     </div>
