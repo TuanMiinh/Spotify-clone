@@ -1,0 +1,122 @@
+:root {
+    --main-text-color: #fff;
+}
+
+
+.main-view-container {
+    min-height: calc(-673px + 100vh);
+    isolation: isolate;
+    padding-bottom: 32px;
+}
+
+.contentspacing {
+    padding: 0 30px;
+}
+
+.contentspacing .author-content {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    overflow-x: auto
+}
+
+.contentspacing .author-title {
+    align-content: space-between;
+    align-items: center;
+    color: var(--main-text-color);
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 28px;
+    text-transform: none;
+}
+
+
+.contentspacing .author-content-item {
+    background: #181818;
+    border-radius: 4px;
+    padding: 16px;
+    width: 148.883px;
+    height: 226.883px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+/* .author-content-item .img-artist {
+    position: relative;
+    
+} */
+
+.author-content-item .img-artist img {
+    margin-bottom: 16px;  
+    width: 148.883px;
+    height: 148.883px; 
+    border-radius: 50%;
+}
+
+.author-content-item .icon-play{
+    position: absolute;
+    width: 42.2px;
+    height: 42.2px;
+    top: 168px;
+    left: 120px;
+    display: none;
+}
+
+.author-content-item:hover {
+    cursor: pointer;
+    background-color: #282828;
+}
+
+.author-content-item:hover .icon-play {
+    cursor: pointer;
+    display: block;
+}
+
+.icon-play .icon-play__button {
+    border-radius: 50%;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+    border: none;
+}
+
+
+.author-content-item:hover .icon-play:hover {
+    transform: translateY(-50px);
+    transition: 0.5s ease-in-out;
+}
+
+
+/* .author-content-item .content-artist {
+    
+} */
+
+.content-artist .name-artist{
+    color: var(--main-text-color);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-transform: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content-artist .artist-description {
+    color: rgb(179, 179, 179);
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-transform: none;
+}
