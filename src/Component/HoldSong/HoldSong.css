@@ -77,3 +77,7 @@
     flex: 0.2;
     box-sizing: border-box;
 }
+
+.end_holder>p{
+    margin-left: 20px;
+}

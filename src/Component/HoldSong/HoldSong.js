@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 import { setCurrentSong,setState,addPlayList } from './songSlice';
 import { useSelector } from 'react-redux';
 import PauseIcon from '@material-ui/icons/Pause';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 export default function HoldSong({song,index,playListID}) {
 
@@ -33,6 +35,10 @@ export default function HoldSong({song,index,playListID}) {
         dispatch(action3)
 
         
+    }
+
+    const handleLike = () =>{
+        alert("Added to your favourite list !")
     }
 
 
@@ -67,7 +73,11 @@ export default function HoldSong({song,index,playListID}) {
                 
             </div>
             <p>571.116.699</p>
-            <p>2:21</p>
+            <div className = 'end_holder'>
+                <FavoriteBorderIcon style={{fontSize: 18}} onClick={handleLike}/>
+                <p>2:21</p>
+            </div>
+            
             
 
         </div>

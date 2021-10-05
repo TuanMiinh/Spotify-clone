@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="soundmanager2_flash_xdomain">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/node_modules/soundmanager2/swf/soundmanager2_flash_xdomain.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

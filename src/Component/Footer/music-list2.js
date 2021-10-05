@@ -16,6 +16,7 @@ import song15 from './music/Phai Chang Em Da Yeu_ - Juky San_ RedT.mp3'
 import song16 from './music/It Will Rain - Bruno Mars.mp3'
 import song17 from './music/Best Of Me - Daniel Powter.mp3'
 import song18 from './music/Chac Anh Dang - Tien Tien_ Trang.mp3'
+import song19 from './music/Anyone - Justin Bieber.mp3'
 
 export default 
 [
@@ -65,6 +66,33 @@ export default
                 src: song1,
                 img:'https://kenh14cdn.com/thumb_w/660/2020/5/5/338-15886868694611534754176.png'
             },
+            {
+                name:"Lạc trôi",
+                artist:"Sơn Tùng MTP",
+                src:song7,
+                img:"https://i.pinimg.com/originals/a9/22/65/a92265203f642ee509b42ec063de2e4c.jpg"
+            },
+            {
+                name:"Muộn rồi mà sao còn",
+                artist:"Sơn Tùng MTP",
+                src:song8,
+                img:"https://dalythinks.files.wordpress.com/2013/12/groban.jpg?w=1200"
+            },{
+                name:"Peaches",
+                artist:"Justin Bieber",
+                src:song9,
+                img:"https://sites.google.com/site/oafowlandfriends/_/rsrc/1478180961767/original-sound-track-ost/ost-us-uk/image.jpeg?height=400&width=400"
+            },{
+                name:"Quốc Ca Việt Nam",
+                artist:"Various Artists",
+                src:song10,
+                img:"https://assets.londonist.com/uploads/2016/10/i875/clash.jpg"
+            },{
+                name:"Circles",
+                artist:"Post Malone",
+                src:song11,
+                img:"https://i.vietgiaitri.com/2019/3/29/khi-sao-us-uk-bi-da-xeo-cuc-tham-bang-bia-album-kieu-thap-nien-8-d9294e.jpg"
+            }
         
         ],
         
@@ -106,6 +134,45 @@ export default
                 artist:"Rose",
                 src:song12,
                 img:"https://toplist.vn/images/800px/bai-hat-us-uk-hay-nhat-moi-thoi-dai-206018.jpg"
+            },
+            {
+                name:"Anyone",
+                artist:"Justin Bieber",
+                src:song19,
+                img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS04_tZRc81hQdzJKKgcJVz48TXS0dwpO1qjg&usqp=CAU"
+            },
+            {
+                name:"Palette",
+                artist:"IU",
+                src: song2,
+                img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3i2heMk85ssihjcskE7SOs0eSwBWSQ3XK_A&usqp=CAU'
+            },
+            {
+                name:"Black",
+                artist:"G-Dragon",
+                src: song3,
+                img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSSZ-ukqLpwabXPSCPCbxbaLD2QTGlMEbCKQ&usqp=CAU'
+            },
+            {
+                name:"Let Her Go",
+                artist:"Passenger",
+                src: song4,
+                img:"https://kenh14cdn.com/thumb_w/660/2020/5/5/338-15886868694611534754176.png"
+        
+            },
+            {
+                name:"Off My Face",
+                artist:"Justin Bieber",
+                src: song5,
+                img:"https://i.pinimg.com/originals/cc/02/35/cc023597e65ec1ab103c960a5ca19ccf.jpg"
+        
+            },
+            {
+                name:"That Should Be Me",
+                artist:"Justin Bieber",
+                src: song6,
+                img:"https://media.pitchfork.com/photos/60392d85c353dd65550acf4e/1:1/w_635,h_635,c_limit/Justin-Bieber.png"
+        
             }
         ]
     },
