@@ -1,8 +1,6 @@
 import React from 'react'
 import LibraryBar from '../LibraryBar'
 import './Author.css'
-import { IconContext } from "react-icons";
-import {BsFillPlayFill} from "react-icons/bs"
 import AuthorHover from "../../Component/AuthorHover/AuthorHover";
 
 
@@ -23,7 +21,9 @@ export default function Author() {
                         <AuthorHover/>
                         <AuthorHover/>
                         <AuthorHover/>
-
+                        <AuthorHover/>
+                        <AuthorHover/>
+                        <AuthorHover/>
 
                     </div>
 

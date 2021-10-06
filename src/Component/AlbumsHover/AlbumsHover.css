@@ -3,7 +3,7 @@
 }
 
 
-.contentspacing .author-content-item {
+.contentspacing .albums-content-item {
     background: #181818;
     border-radius: 4px;
     padding: 16px;
@@ -14,14 +14,13 @@
     flex-direction: column;
 }
 
-.author-content-item .img-artist img {
+.albums-content-item .img-albums img {
     margin-bottom: 16px;  
     width: 148.883px;
     height: 148.883px; 
-    border-radius: 50%;
 }
 
-.author-content-item .icon-play{
+.albums-content-item .icon-play{
     position: absolute;
     width: 42.2px;
     height: 42.2px;
@@ -31,7 +30,7 @@
     visibility: hidden;
 }
 
-.author-content-item .icon-play-remain{
+.albums-content-item .icon-play-remain{
     position: absolute;
     width: 42.2px;
     height: 42.2px;
@@ -39,12 +38,12 @@
     left: 120px;
 }
 
-.author-content-item:hover {
+.albums-content-item:hover {
     cursor: pointer;
     background-color: #282828;
 }
 
-.author-content-item:hover .icon-play {
+.albums-content-item:hover .icon-play {
     cursor: pointer;
     display: block;
     transform: translateY(-50px);
@@ -94,7 +93,7 @@
     margin-left: -4px;
 }
 
-.content-artist .name-artist{
+.content-albums .name-albums{
     color: var(--main-text-color);
     font-size: 16px;
     font-weight: 700;
@@ -106,7 +105,7 @@
     white-space: nowrap;
 }
 
-.content-artist .artist-description {
+.content-albums .albums-description {
     color: rgb(179, 179, 179);
     margin-top: 4px;
     font-size: 14px;

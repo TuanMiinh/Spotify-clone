@@ -8,6 +8,7 @@
     isolation: isolate;
     padding-bottom: 32px;
     width: 100%;
+    position: relative;
 }
 
 .contentspacing {
@@ -15,15 +16,15 @@
 
 }
 
-.contentspacing .author-content {
+.contentspacing .albums-content {
     display: grid;
     grid-gap: 24px;
-    grid-template-columns: auto auto auto auto auto auto ;
+    grid-template-columns: auto auto auto auto auto auto;
     overflow-x: auto;
 
 }
 
-.contentspacing .author-title {
+.contentspacing .albums-title {
     align-content: space-between;
     align-items: center;
     color: var(--main-text-color);
@@ -35,26 +36,4 @@
     letter-spacing: -.04em;
     line-height: 28px;
     text-transform: none;
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
