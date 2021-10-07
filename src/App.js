@@ -18,63 +18,93 @@ import BodyPlayListSong from './BodyPlayListSong/BodyPlayListSong';
 import PodCast from './BodyLibrary/ChildPage/PodCast';
 import Author from './BodyLibrary/ChildPage/Author';
 import Album from './BodyLibrary/ChildPage/Album';
+import LoginForm from './LoginForm/LoginForm';
 
 function App() {
   return (
 
-    
-        <Router>
+        
+    <Router>
         <div className='main'>
-          <SideBar/>
+          
           
           <Switch>
             <Route exact path='/'>
+                <SideBar/>
                 <BodyMain/>
+                <Footer/>
             </Route>
 
             <Route path='/search'>
+                <SideBar/>
                 <BodySearch/>
+                <Footer/>
             </Route>
 
             <Route path='/collection/playlists'>
+                <SideBar/>
                 <Playlist/>
+                <Footer/>
             </Route>
 
             <Route path='/collection/podcast'>
+                <SideBar/>
                 <PodCast/>
+                <Footer/>
             </Route>
 
             <Route path='/collection/authors'>
+                <SideBar/>
                 <Author/>
+                <Footer/>
             </Route>
 
             <Route path='/collection/album'>
+                <SideBar/>
                 <Album/>
+                <Footer/>
             </Route>
 
             <Route exact path='/playlist'>
+                <SideBar/>
                 <BodyPlayList/>
+                <Footer/>
             </Route>
 
             <Route path='/tracks'>
+                <SideBar/>
                 <BodyFouvorite/>
+                <Footer/>
             </Route>
 
             <Route path='/album'>
+                <SideBar/>
                 <BodyPlaySong/>
+                <Footer/>
             </Route>
 
             <Route path='/playlist/'>
+                <SideBar/>
                 <BodyPlayListSong/>
+                <Footer/>
+            </Route>
+
+            <Route exact path='/login'>
+                <LoginForm/>
             </Route>
 
           </Switch>
           
-          <Footer/>
+          
         </div>
-      </Router>
+
+
+        
+        
+        
+    </Router>
     
-    
+      
       
   );
 }
