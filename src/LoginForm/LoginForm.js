@@ -16,7 +16,7 @@ export default function LoginForm() {
         <div className='login-body'>
             <div className="hero">
                 <div className="form-box">
-                    
+
                     <div className="title-spotify">
                         <IconContext.Provider value={{ className: "react-spotify-icons" }}>
                             <FaSpotify />
@@ -36,6 +36,23 @@ export default function LoginForm() {
                         <input type="checkbox" className="check-box"/><span>Remember password</span>
                         <button type="submit" className="submit-btn">Log in</button>
                     </form> : <form id="register" className="input-group" action="">
+                        <input type="text" className="input-field" placeholder="Full-name" required/>
+                        <div className="age">
+                            <label>Age: </label>
+                            <input type="date" className="input-field" placeholder="Age" required/>
+                        </div>  
+                        <div className="sex">
+                            <div className="input-sex">
+                                <input type="radio" name="Male" id="" required /><label>Male</label>
+                            </div>
+                            <div className="input-sex">
+                                <input type="radio" name="Male" id=""  required /><label>Female</label>
+                            </div>
+                            <div className="input-sex">
+                                <input type="radio" name="Another" id=""  required /><label>Another</label>
+                            </div>
+                        </div>
+                        <input type="email" className="input-field" placeholder="Gmail" required/>
                         <input type="text" className="input-field" placeholder="Username" required/>
                         <input type="password" className="input-field" placeholder="Password" required/>
                         <input type="password" className="input-field" placeholder="Repeat Password" required/>
