@@ -12,6 +12,8 @@
     display: flex;
     position: relative;
     flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .author-content-item .img-artist img {

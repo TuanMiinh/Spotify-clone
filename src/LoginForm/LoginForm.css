@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.login-body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://wallpaperaccess.com/full/6502715.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.form-box {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: rgb(53, 52, 52);
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 20px 9px #1db95480;
+}
+
+.title-spotify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26px;
+}
+
+.react-spotify-icons {
+    color: #1DB954;
+    width: 50px;
+    height: 50px;
+}
+
+.title {
+    margin-left: 5px;
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #1DB954;
+    border: 1px solid rgb(43, 42, 42);
+    border-radius: 10px;
+}
+
+.button-box button {
+    font-weight: 600;
+    color: #fff;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #1DB954, #4bec00);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+#btn-1 {
+    top: 0;
+    left: 50%;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #4bec00, #1DB954);
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+    left: 59px;
+    color: #fff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0; 
+    border-top: 0; 
+    border-right: 0;
+    border-bottom: 1px solid #999; 
+    outline: none;
+    background: transparent;
+}
+
+::placeholder { 
+    color: #fff;
+    opacity: 1;
+}
+
+input {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #fff;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #1DB954, #4bec00);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+

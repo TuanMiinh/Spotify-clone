@@ -12,6 +12,8 @@
     display: flex;
     position: relative;
     flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .albums-content-item .img-albums img {
@@ -105,7 +107,7 @@
     white-space: nowrap;
 }
 
-.content-albums .albums-description {
+.content-albums .name-artist {
     color: rgb(179, 179, 179);
     margin-top: 4px;
     font-size: 14px;

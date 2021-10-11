@@ -12,7 +12,7 @@ const AuthorHover = () => {
             <div className="author-content-item">
                 <div className="img-artist">
                     {/*<img src="https://pbs.twimg.com/media/EEM72g-XkAUNo3C.jpg" alt="" />*/}
-                    <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t31.18172-8/30052113_207698366486031_1199681115525341302_o.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=EPBJOnmJSr4AX8b1YxR&_nc_ht=scontent.fhan5-8.fna&oh=eae29faff0df29097ed1af6e02d093ca&oe=61833DB0"/>
+                    <img src="https://scontent.fdad3-1.fna.fbcdn.net/v/t1.15752-9/243298851_522230275546573_9143131907016776528_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=L4uV-7ZpFqYAX8RaQbv&_nc_ht=scontent.fdad3-1.fna&oh=3908ccbbf7aad0c1e9f021a8f120b10c&oe=61852ED4"/>
                 </div>
                 <div className={openIcon ? "icon-play-remain" : "icon-play" }>
                     <button className="icon-play__button" onClick={() => setOpenIcon(!openIcon)}>
@@ -22,7 +22,7 @@ const AuthorHover = () => {
                     </button>
                 </div>
                 <div className="content-artist">
-                    <div className="name-artist">Phạm Doanh thức</div>
+                    <div className="name-artist">Phạm Doanh Thức</div>
                     <div className="artist-description">Artist</div>
                 </div>
             </div>
