@@ -19,6 +19,7 @@ import PodCast from './BodyLibrary/ChildPage/PodCast';
 import Author from './BodyLibrary/ChildPage/Author';
 import Album from './BodyLibrary/ChildPage/Album';
 import LoginForm from './LoginForm/LoginForm';
+import UploadPage from './UploadPage/UploadPage';
 
 function App() {
   return (
@@ -93,6 +94,9 @@ function App() {
                 <LoginForm/>
             </Route>
 
+            <Route exact path='/upload'>
+                <UploadPage/>
+            </Route>
           </Switch>
           
           

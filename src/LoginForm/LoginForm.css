@@ -6,7 +6,7 @@
 
 .login-body {
     width: 100vw;
-    height: 100vh;
+    height: 65vw;
     background-image: url("https://hdwallsource.com/img/2017/12/abstract-spotify-desktop-wallpaper-62370-64314-hd-wallpapers.jpg");
     background-position: center;
     background-size: cover;
@@ -19,7 +19,7 @@
     position: absolute;
 }
 
-.form-box {
+ .form-box {
     width: 380px;
     height: 650px;
     position: relative;
@@ -117,12 +117,12 @@
     background: transparent;
 }
 
-::placeholder { 
+.login-body ::placeholder { 
     color: #fff;
     opacity: 1;
-}
+} 
 
-input {
+.login-body input {
     font-family: sans-serif;
     font-size: 16px;
     color: #fff;
@@ -170,5 +170,5 @@ span {
     font-size: 12px;
     bottom: 68px;
     position: absolute;
-}
+} 
 

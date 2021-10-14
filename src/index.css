@@ -116,12 +116,14 @@ code {
   margin-bottom: 85px;
   padding-bottom: 25px;
   height: 100vh;
+  
 }
 
 .body-bar{
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .footer{
