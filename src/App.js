@@ -26,83 +26,97 @@ function App() {
 
         
     <Router>
-        <div className='main'>
-          
-          
-          <Switch>
+        <Switch>
             <Route exact path='/'>
-                <SideBar/>
-                <BodyMain/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <BodyMain/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/search'>
-                <SideBar/>
-                <BodySearch/>
-                <Footer/>
+                <div className='main'>  
+                    <SideBar/>
+                    <BodySearch/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/collection/playlists'>
-                <SideBar/>
-                <Playlist/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <Playlist/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/collection/podcast'>
-                <SideBar/>
-                <PodCast/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <PodCast/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/collection/authors'>
-                <SideBar/>
-                <Author/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <Author/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/collection/album'>
-                <SideBar/>
-                <Album/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <Album/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route exact path='/playlist'>
-                <SideBar/>
-                <BodyPlayList/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <BodyPlayList/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/tracks'>
-                <SideBar/>
-                <BodyFouvorite/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <BodyFouvorite/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/album'>
-                <SideBar/>
-                <BodyPlaySong/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <BodyPlaySong/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route path='/playlist/'>
-                <SideBar/>
-                <BodyPlayListSong/>
-                <Footer/>
+                <div className='main'>
+                    <SideBar/>
+                    <BodyPlayListSong/>
+                    <Footer/>
+                </div>
             </Route>
 
             <Route exact path='/login'>
-                <LoginForm/>
+                <div className='main'>
+                    <LoginForm/>
+                </div>
             </Route>
-
+        
             <Route exact path='/upload'>
                 <UploadPage/>
             </Route>
-          </Switch>
-          
-          
-        </div>
-
-
+        </Switch>
         
         
         

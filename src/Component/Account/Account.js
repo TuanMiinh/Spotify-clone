@@ -17,24 +17,22 @@ export default function Account() {
         
     ):(
         <div className='account' onClick={showExpand}>
-        <div className='account-img'>
-            <img src='https://vnn-imgs-f.vgcloud.vn/2020/03/23/11/trend-avatar-12.jpg'></img>
-        </div>
-        <div className='account-text'>
-            <p>Tuấn Minh</p>
-        </div>
-        <div className='account-expand' >
-            <ExpandMoreIcon />
-            <ul className='ulExpand'>
-                <li>Tài khoản</li>
-                <li>Hồ sơ</li>
-                <li>Nâng cấp lên Premium</li>
-                <li>Đăng xuất</li>
-            </ul>
-
-        </div>
-        
-    </div> 
+            <div className='account-img'>
+                <img src='https://vnn-imgs-f.vgcloud.vn/2020/03/23/11/trend-avatar-12.jpg'></img>
+            </div>
+            <div className='account-text'>
+                <p>Tuấn Minh</p>
+            </div>
+            <div className='account-expand' >
+                <ExpandMoreIcon />
+                <ul className='ulExpand'>
+                    <li>Tài khoản</li>
+                    <li>Hồ sơ</li>
+                    <li>Nâng cấp lên Premium</li>
+                    <li>Đăng xuất</li>
+                </ul>
+            </div>
+        </div> 
     )
 }
 

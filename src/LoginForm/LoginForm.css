@@ -1,4 +1,4 @@
-* {
+    * {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -7,7 +7,7 @@
 .login-body {
     width: 100vw;
     height: 65vw;
-    background-image: url("https://hdwallsource.com/img/2017/12/abstract-spotify-desktop-wallpaper-62370-64314-hd-wallpapers.jpg");
+    background-image: url("./image/Background-Login.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@
     padding: 5px;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 0 20px 9px #1db95480;
+    box-shadow: 0 0 20px 9px rgb(2, 182, 253);
 }
 
 .title-spotify {
@@ -38,24 +38,16 @@
     margin-top: 26px;
 }
 
-.react-spotify-icons {
-    color: #1DB954;
-    width: 50px;
-    height: 50px;
-}
-
-.title {
-    margin-left: 5px;
-    font-size: 36px;
-    font-weight: 800;
-    color: #fff;
+.logo {
+    width: 250px;
+    height: 42.5px;
 }
 
 .button-box {
     width: 220px;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #1DB954;
+    box-shadow: 0 0 20px 9px rgb(2, 182, 253);
     border: 1px solid rgb(43, 42, 42);
     border-radius: 10px;
 }
@@ -80,7 +72,7 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #1DB954, #4bec00);
+    background: linear-gradient(to right, #00fff2, #ff00dd);
     border-radius: 10px;
     transition: .5s;
 }
@@ -91,7 +83,7 @@
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(to right, #4bec00, #1DB954);
+    background: linear-gradient(to right, #ff00dd, #00fff2);
     border-radius: 10px;
     transition: .5s;
 }
@@ -152,7 +144,7 @@
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right, #1DB954, #4bec00);
+    background: linear-gradient(to right, #00fff2, #ff00dd);
     border: 0;
     outline: none;
     border-radius: 30px;

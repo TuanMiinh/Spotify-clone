@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import './LoginForm.css'
+import a from "./image/Logo.png"
 import {IconContext} from "react-icons";
-import {FaUserCircle,
-        FaSpotify} from "react-icons/fa"
-import {RiLockPasswordFill} from "react-icons/ri"
+import {FaSpotify} from "react-icons/fa"
 import { event } from 'jquery';
 
 
@@ -43,10 +42,7 @@ export default function LoginForm() {
                 <div className="form-box">
 
                     <div className="title-spotify">
-                        <IconContext.Provider value={{ className: "react-spotify-icons" }}>
-                            <FaSpotify />
-                        </IconContext.Provider>
-                        <div className="title">Spotify</div>
+                        <img className="logo" src={a} alt="" />
                     </div>
 
                     <div className="button-box">
@@ -80,7 +76,7 @@ export default function LoginForm() {
                         <input type="email" className="input-field" name = "email" placeholder="Email" required/>
                         <input type="text" className="input-field" name="username" placeholder="Username" required/>
                         <input type="password" className="input-field" name="password" placeholder="Password" required/>
-                        <input type="password" className="input-field" name="passwordConfirm"placeholder="Repeat Password" required/>
+                        <input type="password" className="input-field" name="passwordConfirm"placeholder="Confirm Password" required/>
                         <input type="checkbox" className="check-box" required/><span>I agree to the term & conditions</span>
                         <button type="submit" className="submit-btn" >Register</button>
                     </form>}
