@@ -11,12 +11,21 @@ export default
 
 [
     
-    {
-        name:"If You",
-        artist:"BIGBANG",
-        src: song1,
-        img:'https://kenh14cdn.com/thumb_w/660/2020/5/5/338-15886868694611534754176.png'
-    },
+        
+        {
+            song_name:"If You",
+            artist:[
+
+                {
+                artist_id: "ART0002",
+                artist_name: "Charlie Puth"
+                }
+            ],
+            path: song1,
+            song_image:'https://kenh14cdn.com/thumb_w/660/2020/5/5/338-15886868694611534754176.png'
+        },
+    
+    
     // {
     //     name:"Palette",
     //     artist:"IU",

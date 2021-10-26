@@ -21,7 +21,7 @@ import song19 from './music/Anyone - Justin Bieber.mp3'
 export default 
 [
     {
-        idd:"7WZujZ2eNEaTLRMspOZbjA",
+        idd:"PL0001",
         img:"https://freight.cargo.site/t/original/i/c140b4db86bda05361d65148122813c35192d3a5d9196293afe575581a315a53/rearVinyl.jpg",
         title:"Alone Again",
         songList:[

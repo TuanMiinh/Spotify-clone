@@ -3,7 +3,6 @@ import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import songs1 from './music-list'
-import { useSelector } from 'react-redux';
 import ShuffleIcon from '@material-ui/icons/Shuffle';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PauseCircleFilledIcon from '@material-ui/icons/PauseCircleFilled';
@@ -11,9 +10,12 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import RepeatOneIcon from '@material-ui/icons/RepeatOne';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { setCurrentSong , setState } from '../HoldSong/songSlice';
 import RepeatIcon from '@material-ui/icons/Repeat';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+
+
 
 
 
@@ -26,26 +28,32 @@ export default function Footer() {
     const audio = useRef(null)
     const [isRepeat,setIsRepeat] = useState(false)
     
-
+   
     
 
     const isPlay = useSelector(state => state.playLists).isPlay
    
 
     useEffect(()=>{
-        if(isPlay){
-            audio.current.play()
-        }else{
-            audio.current.pause()
+        if(audio.current!=null){
+            if(isPlay){
+                audio.current.play()
+            }else{
+                audio.current.pause()
+            }
         }
+        
         
         
     })
 
     useEffect(()=>{
-        if((isRepeat==false)&&currentTime == audio.current.duration){
-            handleNext();
+        if(audio.current!=null){
+            if((isRepeat==false)&&currentTime == audio.current.duration){
+                handleNext();
+            }
         }
+        
     })
 
     
@@ -81,10 +89,16 @@ export default function Footer() {
     const handleNext = ()=>{
         if(current==songs.length-1)
         {
-            const action = setCurrentSong(0);
+            const action = setCurrentSong({
+                current:0,
+                songID:songs[0].song_id
+            });
             dispatch(action);
         }else{
-            const action = setCurrentSong(current+1);
+            const action = setCurrentSong({
+                current:current+1,
+                songID:songs[current+1].song_id
+            });
             dispatch(action);
         }
         
@@ -93,10 +107,16 @@ export default function Footer() {
     const handlePrev = ()=>{
         if(current==0)
         {
-            const action = setCurrentSong(songs.length-1);
+            const action = setCurrentSong({
+                current:songs.length-1,
+                songID:songs[songs.length-1].song_id
+            });
             dispatch(action);
         }else{
-            const action = setCurrentSong(current-1);
+            const action = setCurrentSong({
+                current:current-1,
+                songID:songs[current-1].song_id
+            });
             dispatch(action);
         }
         
@@ -121,29 +141,37 @@ export default function Footer() {
             type:'button'
         });
         dispatch(action)
+
+        
     }
 
     
     
-    const playList = useSelector(state=>state.playLists).listSongs.songList
-    const songs = useSelector(state=>state.playLists).listSongs.length!=0?playList:songs1
+    
+    const playList = useSelector(state=>state.playLists).listSongs
+    const songs = useSelector(state=>state.playLists).listSongs.length!=0?playList:null
     const current = useSelector(state => state.playLists).currentSong
     
+    // const [isFavourite , setIsFavourite] = useState(useSelector(state => state.playLists).favourites.indexOf(songs[current].song_id) > -1);
+    const abc = useSelector(state => state.playLists).favourites
+    const x = (songs!=null?abc.indexOf(songs[current].song_id) > -1:false)
+    
+    const [isFavourite , setIsFavourite] = useState(songs!=null?abc.indexOf(songs[current].song_id) > -1:false)
     
     
     
-    
-    return (
+    return songs!=null?(
         <div className='footer'>
             <div className='footer-left'>
                 
-            <img src={songs[current].img}/>
+            <img src={songs[current].song_image}/>
                 <div className='song-detail' >
-                    <h>{songs[current].name}</h>
-                    <p>{songs[current].artist}</p>
+                    <h>{songs[current].song_name}</h>
+                    <p>{songs[current].artist[0].artist_name}</p>
                     
                 </div>
-                <FavoriteBorderIcon/>
+                <FavoriteBorderIcon style={{display: isFavourite?'none':'block'}}/>
+                <FavoriteIcon style={{display: !isFavourite?'none':'block'}}/>
             </div>
 
             <div className='footer-mid'>
@@ -179,7 +207,69 @@ export default function Footer() {
                     </p>
                     
                 </div>
-                <audio ref={audio} src={songs[current].src}></audio>
+                <audio ref={audio} src={'http://localhost:8080/api/song/stream/'+songs[current].song_id}></audio>
+                
+            </div>
+
+
+
+            
+            
+
+            <div className='footer-right'>
+                    
+                    <div>
+                        <div >
+                            <PlaylistPlayIcon/>
+                        </div>
+                        <div className='footer-right__icon'>
+                            <ImportantDevicesIcon/>
+                        </div>
+                        </div>
+                    <div>
+                        <VolumeUpIcon/>
+                        <div className='footer-right__bar'>
+                            <div></div>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+    ):(
+        <div className='footer'>
+            <div className='footer-left'>
+                
+            
+                <div className='song-detail' >
+                    <h></h>
+                    <p></p>
+                    
+                </div>
+                
+            </div>
+
+            <div className='footer-mid'>
+                
+            <div className='footer-mid__button'>
+            <div><ShuffleIcon style={{ fontSize: 20 }}/></div>
+                    <div ><SkipPreviousIcon style={{ fontSize: 20 }}/></div>
+                    <div className={'button'}>
+                        <PlayCircleFilledIcon  style={{ fontSize: 40 }}/></div>
+                    
+                    <div >
+                        <SkipNextIcon style={{ fontSize: 20 }}/></div>
+                    
+                    <div className={'button'}
+                        ><RepeatIcon style={{ fontSize: 20 }}/></div>
+                    
+                </div>
+                <div className='footer-mid__bar'>
+                    <p>0:00</p>
+                    <input   type='range' max='100'  value='0'/>
+                    <p>0:00</p>
+                    
+                </div>
+                
                 
             </div>
 
