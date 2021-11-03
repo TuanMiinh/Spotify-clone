@@ -119,10 +119,7 @@
 }
 
 
-.artist-song-box>.name-artist,
-/* =======
 .upload-name-artist,
->>>>>>> ff16b905e640a935bc26a699142b042b374e2c70 */
 .name-song {
     width: 100%;
     position: relative;
@@ -233,6 +230,7 @@ input[type="time"] {
     text-align: center;
     font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
     border-radius: 5px;
+    padding: 3px 5px;
     border: none;
 }
 
@@ -241,7 +239,7 @@ input[type="time"]:focus {
 }
 
 .submit {
-    margin: 6% auto;
+    margin: 2% auto;
     width: 160px;
     height: 50px;
     background: linear-gradient(to right, var(--main-background-color-1), var(--main-background-color-2));

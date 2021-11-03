@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import './LoginForm.css'
 import a from "./image/Logo.png"
-import {IconContext} from "react-icons";
-import {FaSpotify} from "react-icons/fa"
-import { event } from 'jquery';
+// import {IconContext} from "react-icons";
+// import {FaSpotify} from "react-icons/fa"
+// import { event } from 'jquery';
 
 
 
@@ -42,7 +42,7 @@ export default function LoginForm() {
                 <div className="form-box">
 
                     <div className="title-spotify">
-                        <img className="logo" src={a} alt="" />
+                        <img className="logo-login" src={a} alt="" />
                     </div>
 
                     <div className="button-box">
