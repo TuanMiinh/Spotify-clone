@@ -30,6 +30,25 @@
     width: inherit;
 }
 
+.playlist-image-upload {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -30px;
+    height: 18px;
+    width: 170px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    background: #fff;
+    cursor: pointer;
+}
+
+.playlist-image-upload:hover {
+    background: linear-gradient(to right, #1a53ad, #8619bd);
+    color: var(--color);
+}
+
 .header--content {
     display: flex;
     flex-direction: column;

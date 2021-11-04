@@ -47,6 +47,9 @@ export default function UploadPage() {
     
                 {/* Upload */}
                 <div className="upload-part">
+
+                    <div className="upload-title-main">Upload a song</div>
+                    
                     <div className="upload-box">
     
                         <div className="upload-img-box">
