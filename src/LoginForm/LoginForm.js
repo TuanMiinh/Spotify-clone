@@ -59,8 +59,8 @@ export default function LoginForm() {
                     </form> : <form id="register" className="input-group" action="" onSubmit={handleSubmit}>
                         <input type="text" className="input-field" name="fullname" placeholder="Full-name" required/>
                         <div className="age">
-                            <label>Age: </label>
-                            <input type="date" className="input-field" name="birthday" placeholder="Age" required/>
+                            <label>Birthday: </label>
+                            <input type="date" className="input-field" name="birthday" required/>
                         </div>  
                         <div className="sex" >
                             <div className="input-sex">
