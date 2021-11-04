@@ -22,12 +22,14 @@
     background: white;
     margin-right: 1.5rem;
     position: relative;
+    border: 1px solid white;
 }
 
 .header--img img {
     position: absolute;
     height: inherit;
     width: inherit;
+
 }
 
 .playlist-image-upload {
