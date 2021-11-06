@@ -9,9 +9,14 @@ export default function IconPlay({playListID}) {
     const [listSong, setListSong] = useState([]);
     const isPlay = useSelector(state => state.playLists).isPlay
     const playListState = useSelector(state=> state.playLists).playListID
+    const token = useSelector(state => state.playLists).token
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/'+playListID)
+        fetch('http://localhost:8080/api/playlist/'+playListID,{
+            headers:{
+                    'Authorization':token
+            }
+        })
             .then(respone => respone.json())
             .then(data => {
                 setListSong(data.listSongs)

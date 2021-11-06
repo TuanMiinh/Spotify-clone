@@ -99,7 +99,7 @@ function App() {
                 </div>
             </Route>
 
-            <Route path='/playlist/'>
+            <Route path='/playlist'>
                 <div className='main'>
                     <SideBar/>
                     <BodyPlayListSong/>

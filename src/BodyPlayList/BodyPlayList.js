@@ -1,16 +1,103 @@
-import React from 'react'
+import React, { Fragment, useRef } from 'react'
 import FowardIcon from '../Component/FowardIcon/FowardIcon'
 import Account from '../Component/Account/Account'
 import './BodyPlayList.css'
 import { IconContext } from "react-icons"
-import {BsThreeDots,
-        BsSearch} from "react-icons/bs"
+import {BsThreeDots,BsSearch} from "react-icons/bs"
+import { useSelector } from 'react-redux'
+import { useEffect, useState} from 'react'
+import SongFound from '../Component/SongFound/SongFound'
+import HoldSong from '../Component/HoldSong/HoldSong'
+import ModifyPopup from './ModifyPopup'
+import DeletePopup from './DeletePopup'
+
 
 export default function BodyPlayList() {
-    return (
-        <div className='body'>
+
+    const [searchTerm,setSearchTerm] = useState('')
+    const typingTimeOutRef = useRef(null)
+    const [songList, setSongList] = useState([]);
+    const token = useSelector(state => state.playLists).token
+    const [playlist,setPlaylist] = useState(null)
+    const [playlistID, setPlaylistID] = useState(null)
+    const [displayPopup,setDisplayPopup] = useState(false)
+    const [displayDelete,setDisplayDelete] = useState(false)
+    const handleSearchTermChangle = (e) =>{
+        setSearchTerm(e.target.value);
             
-                <div className= 'header'>
+        if(typingTimeOutRef.current){
+            clearTimeout(typingTimeOutRef.current);
+        };
+
+        typingTimeOutRef.current = setTimeout(()=>{
+            setSearchTerm(e.target.value);
+            fetch('http://localhost:8080/api/song/search/'+searchTerm,{
+                headers:{
+                    'Authorization':token
+                }
+            })
+                .then(respone => respone.json())
+                .then(data => {
+                    setSongList(data)
+                });
+        },300)
+
+    }
+
+    useEffect(() => {
+        fetch('http://localhost:8080/api/playlist/',{
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization':token
+                
+            },
+            body: JSON.stringify({
+                "owner":{
+                    "user_id": "U0001"
+                    
+                },
+                "playlist_name": "Nhạc của tôi",
+                "playlist_duration": 1000,
+                "playlist_image": "https://dt.muvi.vn//mvn/img/v3-default-song-thumbnail.jpg?w=300&h=300",
+                "listSongs": []
+            })
+        })
+            .then(respone => respone.json())
+            .then(data => {
+                setPlaylistID(data.playlist_id);
+                
+                
+            });
+    },[])
+
+    useEffect(() => {
+        fetch('http://localhost:8080/api/playlist/'+playlistID,{
+            headers: { 
+                'Authorization':token
+                
+            },
+            
+        })
+            .then(respone => respone.json())
+            .then(data => {
+                setPlaylist(data)
+                
+            });
+    })
+    
+
+
+    
+
+
+    return playlist?(
+        <div className='body'>
+            <ModifyPopup displayPopup={displayPopup} playlist={playlist} 
+            onSubmit={()=>setDisplayPopup(false)} playlistID={playlistID} token={token}/>
+            <DeletePopup displayDelete={displayDelete} playlistID={playlistID} token={token}
+            onSubmit={()=>setDisplayDelete(false)}/>
+            <div className= 'header'>
                     <div className = 'body-bar'>
                         <FowardIcon/>
                         <Account/>
@@ -18,17 +105,16 @@ export default function BodyPlayList() {
 
                     <div className='header--info'>
                         <div className='header--img'>
-                            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c7156d1c-515c-4a5d-ab77-a856fedda897/denschi-38caba05-16ff-4ad3-b0b0-4dc37ee7af17.png/v1/fill/w_600,h_600,strp/kamen_rider_revice_by_markolios_denschi-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvYzcxNTZkMWMtNTE1Yy00YTVkLWFiNzctYTg1NmZlZGRhODk3XC9kZW5zY2hpLTM4Y2FiYTA1LTE2ZmYtNGFkMy1iMGIwLTRkYzM3ZWU3YWYxNy5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.gFwJd3NgJArmVqrtbuHG0sACV-Qy9is203ccs7NYT4w" alt="" />
+                            <img src={playlist.playlist_image} alt="" />
                         </div>
 
                         <div className='header--content'>
                             <div className='signal'>Playlist</div>
-                            <div className='title'>My Playlist</div>
+                            <div className='title'>{playlist.playlist_name}</div>
                             <div className='username'>Tuấn Minh</div>
                         </div>
                     </div>
                 </div>
-            
                 <div className="body__playlist">
                     <div className="body__playlist--content ">
                         <div className="dot-icon" >
@@ -36,24 +122,49 @@ export default function BodyPlayList() {
                                 <BsThreeDots />
                             </IconContext.Provider>
                             <ul class="dropdown-content" id="myDropdown">
-                                <li>Add</li>
-                                <li>Rename</li>
-                                <li>Delete</li>
-                                <li>Share</li>
+                                <li>Thêm vào danh sách chờ</li>
+                                <li onClick={()=>setDisplayPopup(true)}>Sửa thông tin chi tiết</li>
+                                <li onClick={()=>setDisplayDelete(true)}>Xóa</li>
+                                <li>Chia sẻ</li>
                             </ul>
+                        </div>
+                        <div>
+                            {  playlist?(
+                                
+                                    playlist.listSongs.map((song,i) =>{
+                                    
+                                    return <HoldSong song = {song} index={i+1} playListID={playlist.playlist_id}/>
+                                })
+                                
+                            ) :<Fragment></Fragment>
+                                
+                            }
                         </div>
 
                         <div className="body__playlist--search ">
                             <div className="playlist--title">
-                                Please find the content for your list
+                            Hãy cùng tìm nội dung cho danh sách phát của bạn
                             </div>
                             <div className="playlist--search">
                                 <IconContext.Provider value={{ className: "react-search-icons" }}>
                                     <BsSearch />
                                 </IconContext.Provider>
-                                <input type="text" className="search--box" placeholder="Search song"/>
-                                <input type="submit" value="Search" className="submit--box"/>
+                                <input type="text" className="search--box" placeholder="Search song" value={searchTerm} onChange={handleSearchTermChangle}/>
+                                
                             </div>
+                        </div>
+
+                        <div>
+                        {   
+                             
+                            songList.map((song) =>{
+                                
+                            
+                                return <SongFound song = {song} playlistID = {playlist.playlist_id} token={token}/>
+                                
+                            })
+                        }
+                            
                         </div>
 
                     
@@ -63,5 +174,5 @@ export default function BodyPlayList() {
             
            
         </div>
-    )
+    ):""
 }

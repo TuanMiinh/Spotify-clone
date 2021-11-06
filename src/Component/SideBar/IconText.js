@@ -1,15 +1,19 @@
 import React from 'react'
 import { useRouteMatch , useLocation} from 'react-router'
+import { Link } from 'react-router-dom'
 
 
-export default function IconText({name,Icon,url}) {
+export default function IconText({name,Icon,url,id}) {
     
     return Icon?(
         <Menu name={name} Icon={Icon} url={url}/>
     ):(
-        <div className='icontext'>
-            <p>{name}</p>
-        </div>
+        <Link to={'/playlist/'+id} className='text-link'>
+            <div className='icontext'>
+                <p>{name}</p>
+            </div>
+        </Link>
+        
     )
 }
 
@@ -20,7 +24,7 @@ function Menu({name,Icon,url}){
         strict:true
     })
 
-    console.log(match?match.path:'null')
+    
 
     
     return (

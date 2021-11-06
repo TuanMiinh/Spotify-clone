@@ -2,9 +2,10 @@ import React from 'react'
 import { useState } from 'react';
 import './LoginForm.css'
 import a from "./image/Logo.png"
-import {IconContext} from "react-icons";
-import {FaSpotify} from "react-icons/fa"
-import { event } from 'jquery';
+import { useDispatch } from 'react-redux';
+import { setToken } from '../Component/HoldSong/songSlice';
+import { useHistory } from 'react-router';
+
 
 
 
@@ -12,13 +13,45 @@ export default function LoginForm() {
     
     const [login, setLogin] = useState(false)
     
-
-
+    const dispatch = useDispatch();
+    const history = useHistory();
     const handleLogin = (event) => {
         event.preventDefault();
-        console.log(event.target.username.value);
-        console.log(event.target.password.value);
+        
+        fetch('http://localhost:8080/api/user/login',{
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                
+            },
+            body: JSON.stringify({
+                "account_name":event.target.username.value ,
+                "password": event.target.password.value
+            })
+        })
+            .then(respone => respone.text())
+            .then(data => {
+                    
+                if(data!='Wrong AccountName or password'){
+                    const action  = setToken({
+                        token: data
+                    })
+                        
+                    dispatch(action);
+                    history.push("/");
+                }else{
+                    alert("Wrong AccountName or password")
+                }
+
+            });
+
+        
+        
+        
     }
+
+
+    
 
 
     const handleSubmit = (event) => {
@@ -64,10 +97,10 @@ export default function LoginForm() {
                         </div>  
                         <div className="sex" >
                             <div className="input-sex">
-                                <input type="radio" name="gender" id="" required /><label>Male</label>
+                                <input type="radio" name="gender" value="m" id="" required /><label>Male</label>
                             </div>
                             <div className="input-sex">
-                                <input type="radio" name="gender" id=""  required /><label>Female</label>
+                                <input type="radio" name="gender" value="f" id=""  required /><label>Female</label>
                             </div>
                             {/* <div className="input-sex">
                                 <input type="radio" name="Another" id=""  required /><label>Another</label>

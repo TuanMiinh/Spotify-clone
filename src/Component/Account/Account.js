@@ -2,10 +2,12 @@ import React from 'react';
 import './Account.css';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 export default function Account() {
     const token = null;
+    
     return token == null?(
         <Link to="/login" className='text-link'>
             <div className='account-login'>

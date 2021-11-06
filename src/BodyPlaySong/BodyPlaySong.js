@@ -9,6 +9,7 @@ import data from '../Component/Footer/music-list2'
 import IconPlay from '../Component/IconPlay/IconPlay';
 import { useLocation } from 'react-router';
 import { useState , useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function BodyPlaySong() {
    
@@ -18,13 +19,18 @@ export default function BodyPlaySong() {
         return(pathname[2])
     }
 
+    const token = useSelector(state => state.playLists).token
     
     
     const playListID = getPlayListId(location.pathname)
     const [listPlay,setListPlay] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/'+playListID)
+        fetch('http://localhost:8080/api/playlist/'+playListID,{
+            headers:{
+                'Authorization':token
+            }
+        })
             .then(respone => respone.json())
             .then(data => {
                 setListPlay(sort_by_key(data.listSongs,"song_id"))

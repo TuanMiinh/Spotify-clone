@@ -5,6 +5,7 @@ import PlayList from './PlayList/PlayList';
 export default function PlayListHome({dataPlayList}) {
     dataPlayList = convertObjectToJson(dataPlayList);
     
+    
     return (
         <div className='playlisthome'>
         {
@@ -13,7 +14,8 @@ export default function PlayListHome({dataPlayList}) {
             dataPlayList.map((playlist =>{
                 return(
                     <Link to={'/album/'+playlist[1].playlist_id} className='text-link'>
-                        <PlayList playlist = {playlist[1]}/></Link>
+                        <PlayList playlist = {playlist[1]}/>
+                    </Link>
                     )
 }))  
             

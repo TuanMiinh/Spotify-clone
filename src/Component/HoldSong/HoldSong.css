@@ -6,12 +6,13 @@
     
 }
 
-.holdsong-active>div>p{
+.holdsong-active>div>p,.holdsong-active>p{
     color: #1DB954;
 }
 
 .holdsong:hover,.holdsong-active:hover{
     background-color: #2D2D2D;
+    
 }
 
 .holdsong:hover .iconPlay{
@@ -76,8 +77,10 @@
 .holdsong>p,.holdsong-active>p{
     flex: 0.2;
     box-sizing: border-box;
+    padding-top: 10px;
 }
-
 .end_holder>p{
     margin-left: 20px;
 }
+
+

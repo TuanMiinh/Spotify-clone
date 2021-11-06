@@ -6,6 +6,7 @@
     height: 340px;
     background: linear-gradient(to bottom,#535353, #2B2B2B);
     
+    
 }
 
 .header--info {
@@ -86,12 +87,13 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 24px 32px;
-    position: relative;
+    /* position: relative; */
     margin: 0;
     width: inherit;
     height: 36px;
     border: 0;
     box-shadow: 0 8px 20px rgba(75, 74, 74, 0.5) inset;
+    
 }
 
 .body__playlist--content .dot-icon{
@@ -122,7 +124,7 @@
     margin-top: -5px;
 }
 
-.body__playlist--content .dot-icon:hover .dropdown-content {
+.dot-icon:hover .dropdown-content {
     display: block;
 }
 
@@ -144,6 +146,8 @@
     margin-top: 24px;
     padding: 24px 0;
     border-top: 1px solid rgb(83, 83, 83);
+    /* padding: 24px 32px; */
+    
 }
 
 .body__playlist--search .playlist--title {
@@ -196,4 +200,131 @@
 .playlist--search .submit--box:hover {
     cursor: pointer;
     background-color: rgb(75, 75, 75);
+}
+
+
+.modifyPopup{
+    position: fixed;
+    height: 385px;
+    width: 525px;
+    margin-left: 265px;
+    margin-top: 165px;
+    border-radius: 10px;
+    background:linear-gradient(#282828,#202020);
+    padding: 30px 25px;
+    box-sizing: border-box;
+    color: white;
+}
+.modifyPopup__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modifyPopup h{
+    font-size: 130%;
+    font-weight: 700;
+}
+
+.modifyPopup p{
+    font-size: 70%;
+    font-weight: 600;
+}
+
+.modifyPopup-content{
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    align-content: space-between;
+    
+}
+
+.modifyPopup-content__img{
+    width: 180px;
+    height: 180px;
+    background-image: url('https://dt.muvi.vn//mvn/img/v3-default-song-thumbnail.jpg?w=300&h=300');
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.modifyPopup-content__text>div input{
+    margin-left: 15px;
+    width: 280px;
+    border-radius: 3px;
+    background-color: #3e3e3e;
+    /* background: linear-gradient(#282828,#3e3e3e); */
+    border: none;
+    color: white;
+}
+
+.modifyPopup-content__text input:focus{
+    outline: none;
+}
+.modifyPopup-content__firstInput input{
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.modifyPopup-content__secondInput input{
+    height: 125px;
+    margin-top: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.modifyPopup button{
+    height: 35px;
+    width: 80px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 400px;
+    margin-bottom: 15px;
+}
+
+.deletePopup{
+    position: fixed;
+    background-color: white;
+    width: 320px;
+    height: 140px;
+    margin-left: 385px;
+    margin-top: 270px;
+    border-radius: 5px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+}
+
+.deletePopup h{
+    font-size: 120%;
+    font-weight: 600;
+}
+
+.deletePopup p{
+    font-size: 80%;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.deletePopup div{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.deletePopup-button__first{
+    background-color: white;
+    border: none;
+    height: 35px;
+    width: 95px;
+    font-weight: 600;
+    color: #9b9b9b;
+}
+
+.deletePopup-button__second{
+    background-color: #31a359;
+    height: 35px;
+    width: 95px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
 }

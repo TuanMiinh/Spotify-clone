@@ -4,45 +4,63 @@ import FowardIcon from '../Component/FowardIcon/FowardIcon';
 import Account from '../Component/Account/Account';
 import PlayListHome from '../Component/PlayListHome/PlayListHome';
 import RecomListHome from '../Component/RecomListHome/RecomListHome';
-import { useDispatch } from 'react-redux';
-import { addFavourites } from '../Component/HoldSong/songSlice';
-import dataPlayListHome from './dataPlayListHome';
+import { useDispatch,useSelector } from 'react-redux';
+import { addFavourites  } from '../Component/HoldSong/songSlice';
+import axios from 'axios';
+import { data } from 'jquery';
+
+
 
 
 
 export default function BodyMain() {
     const [dataPlayList,setDataPlayList] = useState([]);
     const [favourites , setFavourites] = useState([]);
+    const token = useSelector(state => state.playLists).token
+
+    useEffect(() => {
+        fetch('http://localhost:8080/api/playlist')
+            .then(respone => respone.json())
+            .then(data => {
+                 setDataPlayList(split_data(getData(data,8),4));
+            });
+    },[])
+
     
+    
+    
+
+
     useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/')
+        fetch('http://localhost:8080/api/playlist/PL0002',{
+            headers:{
+                'Authorization':token
+            }
+        })
             .then(respone => respone.json())
             .then(data => {
-                setDataPlayList(split_data(data,4));
-                // setDataPlayList(data);
+                // setFavourites(data.listSongs)
+                // console.log(data.listSongs)
             });
     },[])
 
-    console.log(dataPlayList)
 
-    useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/PL0002')
-            .then(respone => respone.json())
-            .then(data => {
-                setFavourites(data.listSongs)
-            });
-    },[])
+    
 
-    const favouritesSongID = []
-    for(let i = 0 ; i <= favourites.length - 1 ; i++){
-        favouritesSongID.push(favourites[i].song_id)
-    }
+    // const favouritesSongID = []
+    // for(let i = 0 ; i <= favourites.length - 1 ; i++){
+    //     favouritesSongID.push(favourites[i].song_id)
+    // }
 
-    const action  = addFavourites({
-        favourites: favouritesSongID
-    })
-    const dispatch = useDispatch();
-    dispatch(action);
+    // const action  = addFavourites({
+    //     favourites: favouritesSongID
+    // })
+    // const dispatch = useDispatch();
+    // dispatch(action);
+
+    
+
+    
         
     return (
         <div className='body'>
@@ -90,12 +108,23 @@ function split_data(array, size)
 
 }
 
+function getData(array, size){
+    var result = []
+    var i , count = 0;
+    for(i = 0 ; i <= array.length - 1 ; i++){
+        if(array[i].playlist_name!='Liked Song')
+        {
+            result.push(array[i]);
+            count ++;
+        }
 
-function convertObjectToJson(object){
-    var result = [];
+        if(count == size) break;
+            
+    }
 
-    for(var i in object)
-        result.push([i, object[i]]);
     return result;
 }
+
+
+
 

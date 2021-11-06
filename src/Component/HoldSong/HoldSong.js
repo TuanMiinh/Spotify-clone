@@ -8,14 +8,19 @@ import PauseIcon from '@material-ui/icons/Pause';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useState , useEffect } from 'react';
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 
 export default function HoldSong({song,index,playListID}) {
 
     const [listSong, setListSong] = useState([]);
     const [isFavourite , setIsFavourite] = useState(useSelector(state => state.playLists).favourites.indexOf(song.song_id) > -1);
-
+    const token = useSelector(state => state.playLists).token
     useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/'+playListID)
+        fetch('http://localhost:8080/api/playlist/'+playListID,{
+            headers:{
+                'Authorization':token
+            }
+        })
             .then(respone => respone.json())
             .then(data => {
                 setListSong(data.listSongs)
@@ -102,6 +107,7 @@ export default function HoldSong({song,index,playListID}) {
         
     }
 
+
     const currentSong = useSelector(state => state.playLists).currentSong
     const isPlay = useSelector(state => state.playLists).isPlay
     const playListIdState = useSelector(state => state.playLists).playListID
@@ -123,8 +129,8 @@ export default function HoldSong({song,index,playListID}) {
                     </div>
                     <div className='iconPlay-pause'>
                         {/* <PauseIcon onClick={handleClick} style={{display: isPlay&&playListID==playListIdState?'block':'none' }}/>  */}
-                        <PauseIcon onClick={handleClick} style={{display: isPlay?'block':'none' }}/> 
-                        <PlayArrowIcon onClick={handleClick} style={{display: !isPlay?'block':'none' }}/>  
+                        <PauseIcon onClick={handleClick} style={{display: isPlay?'block':'none' ,color:'green' }}/> 
+                        <PlayArrowIcon onClick={handleClick} style={{display: !isPlay?'block':'none'}}/>  
                     </div>
                    
                 </div>
@@ -136,11 +142,16 @@ export default function HoldSong({song,index,playListID}) {
             </div>
             <p>571.116.699</p>
             <div className = 'end_holder'>
+                {/* <div>
+                    <FavoriteBorderIcon style={{display: isFavourite?'none':'block' , fontSize: 18 }} onClick={handleLike}/>
+                </div> */}
                 <FavoriteBorderIcon style={{display: isFavourite?'none':'block' , fontSize: 18 }} onClick={handleLike}/>
                 <FavoriteIcon style={{display: isFavourite?'block':'none',fontSize: 18 }} onClick={handleUnLike}/>
                 <p>2:21</p>
             </div>
-            
+            <a href={'http://localhost:8080/api/song/download/'+song.song_id}>
+                <DownloadForOfflineIcon style={{fontsize:18,color:'white' }}/>
+            </a>
             
 
         </div>

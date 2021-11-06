@@ -6,12 +6,34 @@ import PageviewIcon from '@material-ui/icons/Pageview';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import  playlist from './dataPlayList';
+// import  playlist from './dataPlayList';
 import { useLocation } from 'react-router';
+import { useSelector } from 'react-redux';
+import { useState , useEffect } from 'react';
 export default function SideBar() {
     
     const path = useLocation().pathname;
-    
+    const [playlist,setPlaylist] = useState([]);
+    const token = useSelector(state => state.playLists).token
+
+    // useEffect(() => {
+    //     fetch('http://localhost:8080/api/playlist/',{
+    //         headers:{
+    //                 'Authorization':token
+    //         }
+    //     })
+    //         .then(respone => respone.json())
+    //         .then(data => {
+    //             setPlaylist(data)
+    //         });
+    // },[])
+    useEffect(() => {
+        fetch('http://localhost:8080/api/playlist')
+            .then(respone => respone.json())
+            .then(data => {
+                setPlaylist(data)
+            });
+    })
     return (
             
             <div className='sidebar'>
@@ -41,7 +63,7 @@ export default function SideBar() {
                     <div className='sidebar-bottom'>
                         {
                             playlist.map((list) =>{
-                                return <IconText name={list.name}/>
+                                return <IconText name={list.playlist_name} id={list.playlist_id}/>
                             })
                         }
                     </div>

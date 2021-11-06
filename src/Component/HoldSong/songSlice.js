@@ -9,8 +9,11 @@ const initialState = {
     playListID:null,
     favourites:[],
     songID:null,
-
+    token:null,
+    
 }
+
+
 
 
 
@@ -59,6 +62,10 @@ const playList = createSlice({
             
                 return state
             
+        },
+        setToken: (state,action)=>{
+            state.token = action.payload.token
+            return state
         }
 
     }
@@ -71,4 +78,5 @@ export const {setState} = actions
 export const {addFavourites} = actions
 export const {setSongIndex} = actions
 export const {removeFavourites} = actions
+export const {setToken} = actions
 export default reducer;
