@@ -18,10 +18,14 @@ export default function BodyPlayList() {
     const typingTimeOutRef = useRef(null)
     const [songList, setSongList] = useState([]);
     const token = useSelector(state => state.playLists).token
+    const count = useSelector(state => state.playLists).count
+    const userInfo = useSelector(state => state.playLists).userInfo
     const [playlist,setPlaylist] = useState(null)
     const [playlistID, setPlaylistID] = useState(null)
     const [displayPopup,setDisplayPopup] = useState(false)
     const [displayDelete,setDisplayDelete] = useState(false)
+    
+    
     const handleSearchTermChangle = (e) =>{
         setSearchTerm(e.target.value);
             
@@ -54,10 +58,10 @@ export default function BodyPlayList() {
             },
             body: JSON.stringify({
                 "owner":{
-                    "user_id": "U0001"
+                    "user_id": userInfo.user_id
                     
                 },
-                "playlist_name": "Nhạc của tôi",
+                "playlist_name": "Playlist của tôi #"+(count+1),
                 "playlist_duration": 1000,
                 "playlist_image": "https://dt.muvi.vn//mvn/img/v3-default-song-thumbnail.jpg?w=300&h=300",
                 "listSongs": []
@@ -82,9 +86,10 @@ export default function BodyPlayList() {
             .then(respone => respone.json())
             .then(data => {
                 setPlaylist(data)
-                
             });
     })
+
+    
     
 
 
@@ -93,7 +98,7 @@ export default function BodyPlayList() {
 
     return playlist?(
         <div className='body'>
-            <ModifyPopup displayPopup={displayPopup} playlist={playlist} 
+            <ModifyPopup displayPopup={displayPopup} 
             onSubmit={()=>setDisplayPopup(false)} playlistID={playlistID} token={token}/>
             <DeletePopup displayDelete={displayDelete} playlistID={playlistID} token={token}
             onSubmit={()=>setDisplayDelete(false)}/>
@@ -128,10 +133,10 @@ export default function BodyPlayList() {
                                 <li>Chia sẻ</li>
                             </ul>
                         </div>
-                        <div>
+                        <div className='body__playlist--holdsong'>
                             {  playlist?(
                                 
-                                    playlist.listSongs.map((song,i) =>{
+                                sort_by_key(playlist.listSongs,"song_id").map((song,i) =>{
                                     
                                     return <HoldSong song = {song} index={i+1} playListID={playlist.playlist_id}/>
                                 })
@@ -160,7 +165,7 @@ export default function BodyPlayList() {
                             songList.map((song) =>{
                                 
                             
-                                return <SongFound song = {song} playlistID = {playlist.playlist_id} token={token}/>
+                                return <SongFound song = {song} playlistID = {playlist.playlist_id} token={token} />
                                 
                             })
                         }
@@ -175,4 +180,13 @@ export default function BodyPlayList() {
            
         </div>
     ):""
+}
+
+function sort_by_key(array, key)
+{
+ return array.sort(function(a, b)
+ {
+  var x = a[key]; var y = b[key];
+  return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+ });
 }

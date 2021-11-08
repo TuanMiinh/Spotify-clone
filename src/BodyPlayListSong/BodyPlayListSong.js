@@ -44,7 +44,7 @@ export default function BodyPlayListSong() {
                 setListPlay(data)
                 
             });
-    },[playListID])
+    })
     
     
 
@@ -75,7 +75,6 @@ export default function BodyPlayListSong() {
                     <div className = 'bdplaylist-body__button'>
                             <IconPlay playListID={playListID}/>
                             <FavoriteBorderIcon style={{color: 'grey', fontSize: 40 }}/>
-                            {/* <MoreHorizIcon style={{ color: 'grey',fontSize: 30 }}/> */}
                             <div className="dot-icon" >
                                 <IconContext.Provider value={{ className: "react-dot-icons" }}>
                                     <BsThreeDots />
@@ -90,8 +89,9 @@ export default function BodyPlayListSong() {
                         </div>
                      
                     <div>
+                    
                         {   
-                            listPlay.listSongs.map((song,i) =>{
+                            sort_by_key(listPlay.listSongs,"song_id").map((song,i) =>{
                                 
                                 return <HoldSong song = {song} index={i+1} playListID={playListID}/>
                             })
@@ -151,4 +151,13 @@ export default function BodyPlayListSong() {
         </div>
         
     </Fragment>)
+}
+
+function sort_by_key(array, key)
+{
+ return array.sort(function(a, b)
+ {
+  var x = a[key]; var y = b[key];
+  return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+ });
 }

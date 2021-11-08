@@ -1,0 +1,127 @@
+.songsearch,.songsearch-active{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    
+}
+.songsearch:hover{
+    background-color: #252424;
+}
+
+.songsearch>div,.songsearch-active>div{
+    display: flex;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    align-items: center;
+    
+}
+.songsearch>div>div,.songsearch-active>div>div{
+    position: relative;
+    margin-right: 10px;
+}
+.songsearch>div>div>img,.songsearch-active>div>div>img{
+    height: 50px;
+    width: 50px;
+    
+}
+.songsearch>div>div>div,.songsearch-active>div>div>div{
+    position: absolute;
+    top: 15px;
+    left: 13px;
+}
+.songsearch-active{
+    background-color: #252424;
+}
+.songsearch-active>div>div>p:first-of-type{
+    color: green;
+}
+.songsearch-second {
+    width: 130px;
+    justify-content: space-between;
+}
+
+.songsearch-second__expand{
+    position: relative;
+    /* display: none; */
+}
+.songsearch:hover .songsearch-second__expand{
+    display: block;
+}
+.songsearch>div>div>div{
+    display: none;
+}
+.songsearch:hover div>div>div{
+    display: block;
+}
+
+.songsearch-second__expand>ul{
+    position: absolute;
+    list-style-type: none;
+    display: none;
+    width: 240px;
+    right: 0;
+    background-color: #222020;
+    border-radius: 5px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    
+}
+.songsearch-second__expand:hover ul{
+    display: block;
+    
+}
+
+
+.songsearch-second__expand>ul>li{
+    text-align: left;
+    right: 0;
+    width: 230px;
+    height: 45px;
+    padding: 13px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.songsearch-second__expand>ul>li:hover{
+    background-color: #3e3e3e;
+}
+
+.li-expand{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.li-expand>ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    transform: translate(-100%);
+    background-color: #222020;
+    width: 240px;
+    border-radius: 5px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    visibility: hidden;
+}
+.li-expand:hover ul{
+    visibility: visible;
+}
+
+.li-expand>ul>li{
+    text-align: left;
+    left: 0;
+    top: 0;
+    width: 230px;
+    padding: 13px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+}
+
+.li-expand>ul>li:hover{
+    background-color: #3e3e3e;
+}

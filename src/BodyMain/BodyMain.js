@@ -15,8 +15,7 @@ import { data } from 'jquery';
 
 export default function BodyMain() {
     const [dataPlayList,setDataPlayList] = useState([]);
-    const [favourites , setFavourites] = useState([]);
-    const token = useSelector(state => state.playLists).token
+    
 
     useEffect(() => {
         fetch('http://localhost:8080/api/playlist')
@@ -26,39 +25,6 @@ export default function BodyMain() {
             });
     },[])
 
-    
-    
-    
-
-
-    useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/PL0002',{
-            headers:{
-                'Authorization':token
-            }
-        })
-            .then(respone => respone.json())
-            .then(data => {
-                // setFavourites(data.listSongs)
-                // console.log(data.listSongs)
-            });
-    },[])
-
-
-    
-
-    // const favouritesSongID = []
-    // for(let i = 0 ; i <= favourites.length - 1 ; i++){
-    //     favouritesSongID.push(favourites[i].song_id)
-    // }
-
-    // const action  = addFavourites({
-    //     favourites: favouritesSongID
-    // })
-    // const dispatch = useDispatch();
-    // dispatch(action);
-
-    
 
     
         

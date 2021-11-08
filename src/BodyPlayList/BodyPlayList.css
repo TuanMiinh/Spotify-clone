@@ -78,9 +78,9 @@
     cursor: pointer;
 }
 
-/* .body__playlist {
-    background-color: #121212;
-} */
+.body__playlist {
+    /* height: 100vh; */
+}
 
 .body__playlist--content {
     display: flex;
@@ -90,16 +90,25 @@
     /* position: relative; */
     margin: 0;
     width: inherit;
-    height: 36px;
+    /* height: 36px; */
     border: 0;
     box-shadow: 0 8px 20px rgba(75, 74, 74, 0.5) inset;
+    /* height: 100vh; */
+    background-color: #121212;
+    
+    
     
 }
 
 .body__playlist--content .dot-icon{
     color: rgb(83, 83, 83);
     width: 2%;
-    height: 36px;
+    /* height: 36px; */
+    
+}
+
+.body__playlist--content{
+    height: 100vh;
 }
 
 .react-dot-icons {
@@ -147,6 +156,7 @@
     padding: 24px 0;
     border-top: 1px solid rgb(83, 83, 83);
     /* padding: 24px 32px; */
+    
     
 }
 
@@ -202,6 +212,10 @@
     background-color: rgb(75, 75, 75);
 }
 
+.body__playlist--holdsong{
+    margin-top: 30px;
+    width: 100%;
+}
 
 .modifyPopup{
     position: fixed;

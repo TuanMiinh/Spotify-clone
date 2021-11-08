@@ -2,6 +2,7 @@
     height: 340px;
     background: linear-gradient(#788897,#42566d);
     box-shadow: 5px 5px 200px #54677a;
+    
 }
 
 .bdplaylist-top__img {
@@ -37,6 +38,8 @@
 .bdplaylist-body{
     padding: 0 30px;
     margin: 30px 0;
+    
+
 }
 
 .bdplaylist-body__button{
@@ -46,3 +49,4 @@
     width: 200px;
     margin-bottom: 30px;
 }
+

@@ -153,10 +153,10 @@ export default function Footer() {
     const current = useSelector(state => state.playLists).currentSong
     
     // const [isFavourite , setIsFavourite] = useState(useSelector(state => state.playLists).favourites.indexOf(songs[current].song_id) > -1);
-    const abc = useSelector(state => state.playLists).favourites
-    const x = (songs!=null?abc.indexOf(songs[current].song_id) > -1:false)
+    // const abc = useSelector(state => state.playLists).favourites
+    // const x = (songs!=null?abc.indexOf(songs[current].song_id) > -1:false)
     
-    const [isFavourite , setIsFavourite] = useState(songs!=null?abc.indexOf(songs[current].song_id) > -1:false)
+    // const [isFavourite , setIsFavourite] = useState(songs!=null?abc.indexOf(songs[current].song_id) > -1:false)
     
     
     
@@ -166,12 +166,12 @@ export default function Footer() {
                 
             <img src={songs[current].song_image}/>
                 <div className='song-detail' >
-                    <h>{songs[current].song_name}</h>
+                    <h>{songs[current].song_id}</h>
                     <p>{songs[current].artist[0].artist_name}</p>
                     
                 </div>
-                <FavoriteBorderIcon style={{display: isFavourite?'none':'block'}}/>
-                <FavoriteIcon style={{display: !isFavourite?'none':'block'}}/>
+                {/* <FavoriteBorderIcon style={{display: isFavourite?'none':'block'}}/>
+                <FavoriteIcon style={{display: !isFavourite?'none':'block'}}/> */}
             </div>
 
             <div className='footer-mid'>

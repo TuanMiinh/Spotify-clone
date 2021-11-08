@@ -5,26 +5,39 @@ import './BodyFouvorite.css'
 import { IconContext } from "react-icons";
 import {BsHeart,
         BsClock} from "react-icons/bs";
-import {BiPlay} from "react-icons/bi"
-import data from '../Component/Footer/music-list2'
 import HoldSong from '../Component/HoldSong/HoldSong';
 import IconPlay from '../Component/IconPlay/IconPlay';
 import { useState , useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 
 export default function BodyFouvorite() {
-    const playListID = "PL0002";
-    const [listPlay,setListPlay] = useState([]);
+    const token = useSelector(state => state.playLists).token
+    const [listPlay,setListPlay] = useState(null)
+    const getFavoriteList = (playlist) =>{
+        let i;
+        for(i = 0 ; i <= playlist.length - 1 ; i++){
+           if(playlist[i].playlist_name == 'Liked Song') {
+                return playlist[i]
+           }
+                
+                
+        }
+    }
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/playlist/'+playListID)
+        fetch('http://localhost:8080/api/playlist/',{
+            headers:{
+                'Authorization':token
+            }
+        })
             .then(respone => respone.json())
             .then(data => {
-                setListPlay(data.listSongs)
-            });
+                setListPlay(getFavoriteList(data))
+                
+            })
     },[])
-
-   
-    return (
+    return listPlay?(
         <div className = 'body'>
 
             <div className='header header-favourite-song'>
@@ -51,7 +64,7 @@ export default function BodyFouvorite() {
             <div className="body__favlist">
                 <div className="body__favlist--content ">
                    
-                    <IconPlay playListID={playListID}/>
+                    <IconPlay playListID={listPlay.playlist_id}/>
                     
                 </div>
 
@@ -66,17 +79,28 @@ export default function BodyFouvorite() {
                     </div>
                     <div>
                         {   
-                            listPlay.map((song,i) =>{
+                            sort_by_key(listPlay.listSongs,"song_id").map((song,i) =>{
                                 
-                                return <HoldSong song = {song} index={i+1} playListID={playListID}/>
+                                return <HoldSong song = {song} index={i+1} playListID={listPlay.playlist_id} />
                             })
                         }
                     </div>
+
+                    
                     
                 </div>
 
             </div>
                 
         </div>
-    )
+    ):""
+}
+
+function sort_by_key(array, key)
+{
+ return array.sort(function(a, b)
+ {
+  var x = a[key]; var y = b[key];
+  return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+ });
 }

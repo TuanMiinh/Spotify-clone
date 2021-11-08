@@ -34,17 +34,21 @@
     cursor: pointer;
 }
 
-.songfound-add{
+.songfound>button{
     border: 1px #2a2a2a solid;
     width: 95px;
     height: 35px;
     border-radius: 40px;
     padding: 7px 25px;
     box-sizing: border-box;
+    background-color: #121212;
+    color: white; 
+    cursor: pointer;
     
 }
-.songfound:hover .songfound-add{
+.songfound:hover .songfound>button{
     border: 1px white solid;
+    
 }
 
 

@@ -1,10 +1,15 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './LoginForm.css'
 import a from "./image/Logo.png"
 import { useDispatch } from 'react-redux';
-import { setToken } from '../Component/HoldSong/songSlice';
+import { setToken,setUserPlayList,setUserInfo , setFavourites} from '../Component/HoldSong/songSlice';
 import { useHistory } from 'react-router';
+import { data } from 'jquery';
+
+
+
+
 
 
 
@@ -12,9 +17,78 @@ import { useHistory } from 'react-router';
 export default function LoginForm() {
     
     const [login, setLogin] = useState(false)
-    
     const dispatch = useDispatch();
     const history = useHistory();
+    
+
+    const fetchUserInfo = (token) =>{
+        fetch('http://localhost:8080/api/user/get',{
+                        headers:{
+                            'Authorization':token
+                        }
+                    })
+                        .then(respone => respone.json())
+                        .then(data => {
+                            const action = setUserInfo({
+                                userInfo:data
+                            })
+                            dispatch(action)
+        });  
+    }
+
+    const getFavoriteList = (playlist) =>{
+        let i;
+        for(i = 0 ; i <= playlist.length - 1 ; i++){
+           if(playlist[i].playlist_name == 'Liked Song') {
+                return playlist[i]
+           }
+                
+                
+        }
+    }
+
+    const getFavoriteListID = (list) =>{
+        let j
+        const result = []
+        for(j = 0 ; j <= list.listSongs.length - 1 ; j++)
+            result.push(list.listSongs[j].song_id)
+        return result
+    }
+
+    
+
+    const fetchUserPlayList = (token) =>{
+        fetch('http://localhost:8080/api/playlist/',{
+                        headers:{
+                            'Authorization':token
+                        }
+                    })
+                        .then(respone => respone.json())
+                        .then(data => {
+                            
+                            const action = setUserPlayList({
+                                userPlayList:data
+                            })
+                            dispatch(action)
+
+                            const favoriteList = getFavoriteList(data)
+                            
+                            const action2 = setFavourites({
+                                type:'SET-INFOR',
+                                listSong:favoriteList
+                            })
+                            dispatch(action2)
+
+                            const favoriteListID = getFavoriteListID(favoriteList)
+                            const action3 = setFavourites({
+                                type:'SET',
+                                listSongID:favoriteListID
+                            })
+                            dispatch(action3)
+        });  
+    }
+
+
     const handleLogin = (event) => {
         event.preventDefault();
         
@@ -29,21 +103,30 @@ export default function LoginForm() {
                 "password": event.target.password.value
             })
         })
-            .then(respone => respone.text())
+            .then(respone => respone.json())
             .then(data => {
                     
-                if(data!='Wrong AccountName or password'){
+                if(data.token){
+                    fetchUserInfo(data.token)
+                    fetchUserPlayList(data.token)
                     const action  = setToken({
-                        token: data
+                        token: data.token
                     })
-                        
                     dispatch(action);
+                    alert(data.status)
                     history.push("/");
                 }else{
-                    alert("Wrong AccountName or password")
+                    alert(data.status)
                 }
 
             });
+
+
+            
+            
+            
+        
+            
 
         
         
@@ -56,13 +139,41 @@ export default function LoginForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event.target.fullname.value);
-        console.log(event.target.birthday.value);
-        console.log(event.target.gender.value);
-        console.log(event.target.email.value);
-        console.log(event.target.username.value);
-        console.log(event.target.password.value);
-        console.log(event.target.passwordConfirm.value);
+        if(event.target.password.value!=event.target.passwordConfirm.value){
+            alert("Mật khẩu không khớp!")
+        }else{
+            alert("Vui lòng xác nhận email!")
+            fetch('http://localhost:8080/api/user/register',{
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    
+                },
+                body: JSON.stringify({
+                    "user_name": event.target.fullname.value,
+                    "user_email": event.target.email.value,
+                    "account": {
+                        "account_name": event.target.username.value,
+                        "password": event.target.password.value
+                    },
+                    "sex": event.target.gender.value,
+                    "birthday": event.target.birthday.value
+                })
+            })
+            .then(respone => respone.json())
+            .then(data => {
+                console.log(data)
+                alert('Đăng ký thành công!')
+                setLogin(false)
+                
+            })
+
+
+            
+            
+            
+        }
+        
         
     }
 

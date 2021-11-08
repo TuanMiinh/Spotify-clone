@@ -44,19 +44,23 @@
     position: absolute;
     list-style: none;
     right: 0;
-    border-radius: 5px;
-    padding: 3px 5px;
+    border-radius: 3px;
+    padding: 3px 3px;
     background-color: #282828;
     display: none;
+}
+
+.account-expand:hover ul{
+    display: block;
 }
 
 .account-expand li{
     right: 0;
     width: 190px;
     height: 43px;
-    border-radius: 5px;
+    border-radius: 3px;
     box-sizing: border-box;
-    padding:10px 15px;
+    padding:13px 15px;
     font-size: 95%;
     background-color: #282828;
     margin: 5px 3px;

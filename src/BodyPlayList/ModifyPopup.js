@@ -1,7 +1,7 @@
 import React from 'react'
 import './BodyPlayList.css'
 import CloseIcon from '@mui/icons-material/Close';
-export default function ModifyPopup({displayPopup,playlist, onSubmit , playlistID, token}) {
+export default function ModifyPopup({displayPopup, onSubmit , playlistID, token}) {
 
     const handleSubmit = (event) =>{
         event.preventDefault();
@@ -14,15 +14,13 @@ export default function ModifyPopup({displayPopup,playlist, onSubmit , playlistI
             },
             body: JSON.stringify({
                 "playlist_id": playlistID,
-                "owner":playlist.owner,
                 "playlist_name": event.target.playlist_name.value,
-                "playlist_duration": 1000,
-                "playlist_image":playlist.playlist_image,
-                "listSongs":playlist.listSongs
+               
                 
             })
         })
         
+        onSubmit();
         
     }
 
