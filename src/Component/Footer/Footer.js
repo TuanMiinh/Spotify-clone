@@ -166,7 +166,7 @@ export default function Footer() {
                 
             <img src={songs[current].song_image}/>
                 <div className='song-detail' >
-                    <h>{songs[current].song_id}</h>
+                    <h>{songs[current].song_name}</h>
                     <p>{songs[current].artist[0].artist_name}</p>
                     
                 </div>

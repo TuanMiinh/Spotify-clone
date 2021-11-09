@@ -93,7 +93,7 @@ export default function BodyPlayListSong() {
                         {   
                             sort_by_key(listPlay.listSongs,"song_id").map((song,i) =>{
                                 
-                                return <HoldSong song = {song} index={i+1} playListID={playListID}/>
+                                return <HoldSong song = {song} index={i+1} playListID={playListID} canRemove={true}/>
                             })
                         }
                     </div>

@@ -30,6 +30,18 @@
     top: 15px;
     left: 13px;
 }
+.songsearch>div>div>p,.songsearch-active>div>div>p{
+    font-size: 14px;
+    color: rgb(151, 151, 151);
+    margin-top: 3px;
+}
+.songsearch>div>div>p:first-of-type,.songsearch-active>div>div>p:first-of-type{
+    font-weight: 600;
+    color: white;
+    font-size: 15px;
+}
+
+
 .songsearch-active{
     background-color: #252424;
 }

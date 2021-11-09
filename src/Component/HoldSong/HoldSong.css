@@ -3,7 +3,10 @@
     color: white;
     justify-content: space-between;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 7px;
+    padding: 3px 0;
+    box-sizing: border-box;
+    
     
 }
 
@@ -74,6 +77,10 @@
     
 }
 
+.holdsong>div>p{
+    margin-right: 20px;
+}
+
 
 .holdsong>p,.holdsong-active>p{
     flex: 0.2;
@@ -85,3 +92,12 @@
 }
 
 
+.holdsong-active >a{
+    padding-top: 7px;
+    padding-right: 5px;
+}
+
+.holdsong>a{
+    padding-top: 7px;
+    padding-right: 5px;
+}

@@ -37,7 +37,7 @@ export default function SongSearch({song}) {
         })
             .then(respone => respone.json())
             .then(data => console.log(data))
-        alert('ADD thanh cong')
+        alert('Đã thêm bài hát vào playlist của bạn')
     }
 
     const handleClick = ()=>{
@@ -85,7 +85,7 @@ export default function SongSearch({song}) {
         <div className={song.song_id==songID?'songsearch-active':'songsearch'}> 
         <div>
             <div>
-                <img src='https://i.ytimg.com/an/lbSOLBMUvIE/a9597bb1-0198-46e0-8139-d3b22f7da20c_mq.jpg?v=5fa326a7'></img>
+                <img src={song.song_image}></img>
                 <div>
                     <PlayArrowIcon onClick = {handleClick} style={{display: song.song_id!=songID||(song.song_id==songID&&!isPlay)?'block':'none' }}/>
                     <PauseIcon onClick = {handlePause} style={{display: isPlay&&song.song_id==songID?'block':'none' }}/>
@@ -93,7 +93,7 @@ export default function SongSearch({song}) {
             </div>
             
             <div>
-                <p>{song.song_id}</p>
+                <p>{song.song_name}</p>
                 <p>{song.artist[0].artist_name}</p>
             </div>
         </div>

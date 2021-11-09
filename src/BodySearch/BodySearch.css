@@ -37,7 +37,8 @@
     padding: 0 30px;
     background-color: #121212;
     display: flex;
-    height: 100vh;
+    height: 330px;
+    
 }
 .bodysearch-result__topshow{
     flex: 0.4;
@@ -74,8 +75,18 @@
 }
 
 
-.bodysearch-result__topshow>div p{
-    margin-bottom: 15px;
+.bodysearch-result__topshow>div>p{
+    margin-top: 5px;
+    font-size: 14px;
+    color: rgb(151, 151, 151)
+}
+
+.bodysearch-result__topshow>div>p:first-of-type{
+    margin-top: 15px;
+    font-weight: 600;
+    color: white;
+    font-size: 30px;
+    
 }
 .bodysearch-result__listshow{
     flex: 0.6;
@@ -91,4 +102,23 @@
 .bodysearch-result__listshow>div{
     margin-top: 15px;
     border-radius: 3px;
+}
+
+.bodysearch-artist{
+    padding: 0 30px;
+    color: white;
+    margin-bottom: 30px;
+    height: 400px;
+    background-color: #121212;
+}
+
+.bodysearch-artist>p{
+    font-size: 150%;
+    font-weight: 700; 
+}
+
+.bodysearch-artist>div{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
 }

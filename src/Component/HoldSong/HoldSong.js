@@ -9,8 +9,9 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useState , useEffect } from 'react';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-export default function HoldSong({song,index,playListID}) {
+export default function HoldSong({song,index,playListID,canRemove}) {
 
     const [listSong, setListSong] = useState([]);
     const [isFavourite , setIsFavourite] = useState(useSelector(state => state.playLists).favouriteListID.indexOf(song.song_id) > -1);
@@ -131,6 +132,15 @@ export default function HoldSong({song,index,playListID}) {
         
     }
 
+    const handleRemove = (playlist_id) =>{
+        fetch('http://localhost:8080/api/playlist/'+playlist_id+'/'+song.song_id,{
+            method:'DELETE',
+            headers:{
+                'Authorization':token
+            }
+        })
+    }
+
 
     
     const isPlay = useSelector(state => state.playLists).isPlay
@@ -158,14 +168,15 @@ export default function HoldSong({song,index,playListID}) {
                 <img src={song.song_image}></img>
                 {/* <p>{song.song_name} ( with {song.artists[0].artist_name} )</p> */}
                 
-                <p>{song.song_id}</p>
+                <p>{song.song_name}</p>
                 
             </div>
             <p>571.116.699</p>
             <div className = 'end_holder'>
-                <FavoriteBorderIcon style={{display: isFavourite?'none':'block' , fontSize: 18 }} onClick={handleLike}/>
-                <FavoriteIcon style={{display: isFavourite?'block':'none',fontSize: 18 }} onClick={handleUnLike}/>
+                <FavoriteBorderIcon style={{display: isFavourite||!token?'none':'block' , fontSize: 18 }} onClick={handleLike}/>
+                <FavoriteIcon style={{display: isFavourite&&token?'block':'none',fontSize: 18 }} onClick={handleUnLike}/>
                 <p>2:21</p>
+                <RemoveCircleOutlineIcon style={{display:canRemove?'block':'none',fontSize: 18 }} onClick={() => handleRemove(playListID)}/>
             </div>
             <a href={'http://localhost:8080/api/song/download/'+song.song_id}>
                 <DownloadForOfflineIcon style={{fontsize:18,color:'white' }}/>

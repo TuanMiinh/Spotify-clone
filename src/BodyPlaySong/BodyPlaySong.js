@@ -71,7 +71,7 @@ export default function BodyPlaySong() {
                         {   
                             listPlay.map((song,i) =>{
                                 
-                                return <HoldSong song = {song} index={i+1} playListID={playListID}/>
+                                return <HoldSong song = {song} index={i+1} playListID={playListID} isUser={true}/>
                             })
                         }
                     </div>
