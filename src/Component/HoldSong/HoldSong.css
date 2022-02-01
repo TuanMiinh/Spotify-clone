@@ -77,7 +77,7 @@
     
 }
 
-.holdsong>div>p{
+.holdsong>div>p,.holdsong-active>div>p{
     margin-right: 20px;
 }
 
